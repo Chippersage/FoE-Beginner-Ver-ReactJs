@@ -1,0 +1,158 @@
+{
+  "questions": [
+    {
+      "questionText": "1. What is a baby duck called?",
+      "correctAnswer": "c",
+      "options": [
+        { "value": "a", "label": "A) a baby duck" },
+        { "value": "b", "label": "B) a chick" },
+        { "value": "c", "label": "C) a duckling" },
+        { "value": "d", "label": "D) a duck baby" }
+      ],
+      "syncData": [
+        { "start": "0.10", "end": "0.50", "text": "1. What " },
+        { "start": "0.50", "end": "0.80", "text": " is" },
+        { "start": "0.80", "end": "1.10", "text": " a" },
+        { "start": "1.10", "end": "1.50", "text": " baby" },
+        { "start": "1.50", "end": "1.90", "text": " duck" },
+        { "start": "1.90", "end": "2.45", "text": " called?" }
+      ],
+      "audioSrc": "/audio/activity_section2.mp3",
+      "correctAudioSrc": "/audio/youarecorrect.mp3",
+      "incorrectAudioSrc": "/audio/activity_section2_answer1.mp3"
+    },
+    {
+      "questionText": "2. The young of a hen is?",
+      "correctAnswer": "a",
+      "options": [
+        { "value": "a", "label": "A) a chick" },
+        { "value": "b", "label": "B) a chikku" },
+        { "value": "c", "label": "C) a baby hen" },
+        { "value": "d", "label": "D) a cook" }
+      ],
+      "syncData": [
+        { "start": "0.50", "end": "1.00", "text": "2. The " },
+        { "start": "1.00", "end": "1.70", "text": " young" },
+        { "start": "1.70", "end": "2.00", "text": " of" },
+        { "start": "2.00", "end": "2.30", "text": " a" },
+        { "start": "2.30", "end": "2.60", "text": " hen" },
+        { "start": "2.60", "end": "2.95", "text": " is?" }
+      ],
+      "audioSrc": "/audio/activity_section3.mp3",
+      "correctAudioSrc": "/audio/youaresuperb.mp3",
+      "incorrectAudioSrc": "/audio/activity_section3_answer2.mp3"
+    },
+    {
+      "questionText": "3. In the story, who was the first to hatch?",
+      "correctAnswer": "b",
+      "options": [
+        { "value": "a", "label": "A) the chick" },
+        { "value": "b", "label": "B) the duckling" },
+        { "value": "c", "label": "C) the baby hen" },
+        { "value": "d", "label": "D) the chikku" }
+      ],
+      "syncData": [
+        { "start": "0.60", "end": "1.00", "text": "3. In" },
+        { "start": "1.00", "end": "1.30", "text": " the" },
+        { "start": "1.30", "end": "1.90", "text": " story," },
+        { "start": "1.90", "end": "2.30", "text": " who" },
+        { "start": "2.30", "end": "2.60", "text": " was" },
+        { "start": "2.60", "end": "2.90", "text": " the" },
+        { "start": "2.90", "end": "3.35", "text": " first" },
+        { "start": "3.35", "end": "3.70", "text": " to" },
+        { "start": "3.70", "end": "4.10", "text": " hatch?" }
+      ],
+      "audioSrc": "/audio/activity_section4.mp3",
+      "correctAudioSrc": "/audio/verygood.mp3",
+      "incorrectAudioSrc": "/audio/activity_section4_answer1.mp3"
+    },
+    {
+      "questionText": "4. What does the chick do?",
+      "correctAnswer": "a",
+      "options": [
+        { "value": "a", "label": "A) follows the duckling." },
+        { "value": "b", "label": "B) leads the duckling." },
+        { "value": "c", "label": "C) goes to the pond for swimming." },
+        { "value": "d", "label": "D) sleeps in the egg." }
+      ],
+      "syncData": [
+        { "start": "0.65", "end": "1.05", "text": "4. What" },
+        { "start": "1.05", "end": "1.50", "text": " does" },
+        { "start": "1.50", "end": "1.85", "text": " the" },
+        { "start": "1.85", "end": "2.20", "text": " chick" },
+        { "start": "2.20", "end": "3.30", "text": " do?" },
+        { "start": "3.30", "end": "3.70", "text": " The" },
+        { "start": "3.70", "end": "4.20", "text": " chick" }
+      ],
+      "audioSrc": "/audio/activity_section5.mp3",
+      "correctAudioSrc": "/audio/audio4.mp3",
+      "incorrectAudioSrc": "/audio/activity_section5_answer2.mp3"
+    },
+    {
+      "questionText": "5. The chick was about to drown because he",
+      "correctAnswer": "c",
+      "options": [
+        { "value": "a", "label": "A) liked to drown." },
+        { "value": "b", "label": "B) wanted to see if the duckling would help him." },
+        { "value": "c", "label": "C) did not know how to swim." },
+        { "value": "d", "label": "D) wanted to drink more water." }
+      ],
+      "syncData": [
+        { "start": "0.10", "end": "0.40", "text": "5. The" },
+        { "start": "0.40", "end": "0.90", "text": " chick" },
+        { "start": "0.90", "end": "1.20", "text": " was" },
+        { "start": "1.20", "end": "1.70", "text": " about" },
+        { "start": "1.70", "end": "2.00", "text": " to" },
+        { "start": "2.00", "end": "2.50", "text": " drown" },
+        { "start": "2.50", "end": "3.10", "text": " because" },
+        { "start": "3.10", "end": "3.50", "text": " he" }
+      ],
+      "audioSrc": "/audio/activity_section6.mp3",
+      "correctAudioSrc": "/audio/good.mp3",
+      "incorrectAudioSrc": "/audio/activity_section6_answer1.mp3"
+    },
+    {
+      "questionText": "6. Who saved the chick from drowning?",
+      "correctAnswer": "d",
+      "options": [
+        { "value": "a", "label": "A) the fish." },
+        { "value": "b", "label": "B) the fisherman." },
+        { "value": "c", "label": "C) the tortoise." },
+        { "value": "d", "label": "D) the duckling." }
+      ],
+      "syncData": [
+        { "start": "0.10", "end": "0.50", "text": "6. Who" },
+        { "start": "0.50", "end": "1.10", "text": " saved" },
+        { "start": "1.10", "end": "1.40", "text": " the" },
+        { "start": "1.40", "end": "1.80", "text": " chick" },
+        { "start": "1.80", "end": "2.20", "text": " from" },
+        { "start": "2.20", "end": "2.80", "text": " drowning?" }
+      ],
+      "audioSrc": "/audio/activity_section7.mp3",
+      "correctAudioSrc": "/audio/audio3.mp3",
+      "incorrectAudioSrc": "/audio/activity_section7_answer2.mp3"
+    },
+    {
+      "questionText": "7. At the end of the story, the chick and the duckling",
+      "correctAnswer": "b",
+      "options": [
+                {" value": "a", "label": "A) Yes." },
+                { "value": "b", "label": "B) No"}
+                  ],
+        "syncData":[
+          { "end": "0.90", "start": "0.30", "text": "7. Did " },
+          { "end": "1.20", "start": "0.90", "text": " the" },
+          { "end": "1.60", "start": "1.20", "text": " chick" },
+          { "end": "2.00", "start": "1.60", "text": " follow" },
+          { "end": "2.40", "start": "2.00", "text": " duckling" },
+          { "end": "2.70", "start": "2.40", "text": " to" },
+          { "end": "3.00", "start": "2.70", "text": " the" },
+          { "end": "3.40", "start": "3.00", "text": " pond" },
+          { "end": "4.00", "start": "3.40", "text": " again?" }
+                    ],
+        "audioSrc": "audio/activity_section8.mp3",
+        "correctAudioSrc": "audio/audio4.mp3",
+        "incorrectAudioSrc": "audio/activity_section8_answer1.mp3"
+        }
+  ]
+}

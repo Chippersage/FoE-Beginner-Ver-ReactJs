@@ -1,0 +1,15 @@
+.lesson-controls {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .lesson-controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: aliceblue;
+    cursor: pointer;
+  }
+  

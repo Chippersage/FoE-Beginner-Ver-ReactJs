@@ -1,0 +1,44 @@
+.header {
+  background-color: #282c34;
+  padding: 10px; /* Reduced padding for better responsiveness */
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between; /* Align logos on the sides and text in the center */
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.header-text {
+  flex: 1;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5vw; /* Responsive font size based on viewport width */
+  font-family:Verdana, Geneva, Tahoma, sans-serif; 
+}
+.left-logo {
+  flex: 0 1 auto;
+  width: 20%; /* Adjust size to fit screen, can be customized */
+  max-width: 150px; /* Limit max width for larger screens */
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .header-text {
+    margin: 10px 0;
+  }
+
+  .left-logo {
+    width: 20%; /* Adjust logo size for smaller screens */
+  }
+
+  .header h1 {
+    font-size: 3vw; 
+  }
+}

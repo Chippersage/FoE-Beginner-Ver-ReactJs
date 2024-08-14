@@ -1,0 +1,265 @@
+/* General container styling */
+.activity-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Question text styling */
+.activity-container h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Options styling */
+.options {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.option-container {
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option-container:hover {
+  background-color: #f0f0f0;
+  border-color: #aaa;
+}
+
+.option-container input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.option-container label {
+  font-size: 1.2em;
+  color: #577f5a;
+}
+
+/* Feedback styling */
+.feedback {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feedback.correct {
+  color: #155724;
+  background-color: #d4edda;
+}
+
+.feedback.incorrect {
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+/* Background color for selected answers */
+.correct-answer {
+  background-color: #d4edda !important;
+}
+
+.wrong-answer {
+  background-color: #f8d7da !important;
+}
+
+/* Footer with buttons */
+.score-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.score-footer button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #66c3d0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.score-footer button img {
+  width: 24px; /* Set a fixed width for the icons */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.score-footer button:hover {
+  background-color: #47b0bd;
+}
+
+/* Congratulatory message */
+.congratulations {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.congratulations h3 {
+  font-size: 1.8em;
+  color: #2c3e50;
+}
+
+.congratulations img.trophy-image {
+  margin-top: 10px;
+  width: 100px;
+}
+
+/* Start Quiz Button */
+.start-quiz-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.start-quiz-image {
+  width: 100px;
+  transition: transform 0.3s;
+}
+
+.start-quiz-image:hover {
+  transform: scale(1.1);
+}
+
+.scrorecorrectbox {
+  background-color: #d4edda;
+  padding: 8px;
+}
+
+.scrorewrongbox {
+  background-color: #f8d7da;
+  padding: 8px;
+}
+
+/* Answer list styling */
+.answers-list {
+  list-style-type: none;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.answer-item {
+  margin-bottom: 20px;
+}
+
+strong.question-label {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.user-answer.wrong-answer-label {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 2px;
+  display: flex;
+  background-color: #ffffff;
+  font-size: 14px;
+  background-color: #f8d7da;
+}
+
+.user-answer.correct-answer-label {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 2px;
+  display: flex;
+  color: #155724;
+  font-size: 14px;
+  background-color: #d4edda;
+}
+
+.correct-answer-label {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 2px;
+  display: flex;
+  color: #155724;
+  font-size: 14px;
+  background-color: #d4edda;
+}
+
+.back-to-home-btn {
+  background-color: #47b0bd;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-home-btn:hover {
+  background-color: #3a8d9a;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .activity-container {
+      padding: 5px;
+  }
+
+  .option-container {
+      padding: 8px;
+      font-size: 1em;
+  }
+
+  .score-footer button {
+      padding: 8px 15px;
+      font-size: 0.9em;
+  }
+
+  .score-footer button img {
+      width: 20px; /* Smaller icons for small screens */
+  }
+
+  .congratulations h3 {
+      font-size: 1.5em;
+  }
+
+  .congratulations img.trophy-image {
+      width: 80px;
+  }
+
+  .start-quiz-image {
+      width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .header-text {
+    margin: 10px 0;
+  }
+
+  .left-logo {
+    width: 20%; /* Adjust logo size for smaller screens */
+  }
+
+  .header h1 {
+    font-size: 3vw; 
+  }
+
+  .score-footer button img {
+      width: 22px; /* Adjust icon size for medium screens */
+  }
+}

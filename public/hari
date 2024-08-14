@@ -1,0 +1,977 @@
+// import React, { useEffect, useState } from 'react';
+// import './ActivityPage.css';
+
+// const ActivityPage = () => {
+//     const [selectedAnswer, setSelectedAnswer] = useState(null);
+//     const [score, setScore] = useState(0);
+//     const [isCorrect, setIsCorrect] = useState(null);
+//     const [audio, setAudio] = useState(null);
+//     const [highlightedText, setHighlightedText] = useState('');
+//     const [currentQuestion, setCurrentQuestion] = useState(-1);
+//     const [introAudioPlayed, setIntroAudioPlayed] = useState(false);
+//     const [selectedAnswers, setSelectedAnswers] = useState([]);
+//     const [quizCompleted, setQuizCompleted] = useState(false);
+
+
+//     const introAudioSrc = '/audio/activity_section1.mp3';
+
+//     const questions = [
+//         {
+//             questionText: "1.What is a baby duck called?",
+//             correctAnswer: 'c',
+//             options: [
+//                 { value: 'a', label: 'A) a baby duck' },
+//                 { value: 'b', label: 'B) a chick' },
+//                 { value: 'c', label: 'C) a duckling' },
+//                 { value: 'd', label: 'D) a duck baby' },
+//             ],
+//             syncData: [
+//                 { "end": "0.50", "start": "0.10", "text": "1. What " },
+//                 { "end": "0.80", "start": "0.50", "text": " is" },
+//                 { "end": "1.10", "start": "0.80", "text": " a" },
+//                 { "end": "1.50", "start": "1.10", "text": " baby" },
+//                 { "end": "1.90", "start": "1.50", "text": " duck" },
+//                 { "end": "2.45", "start": "1.90", "text": " called?" }
+//             ],
+//             audioSrc: '/audio/activity_section2.mp3',
+//             correctAudioSrc: '/audio/audio2.mp3',
+//             incorrectAudioSrc: '/audio/activity_section2_answer1.mp3',
+//         },
+//         // Add additional questions here with similar structure
+//         {
+//             questionText: "2.The young of a hen is?",
+//             correctAnswer: 'a',
+//             options: [
+//                 { value: 'a', label: 'A) a chick' },
+//                 { value: 'b', label: 'B) a chikku' },
+//                 { value: 'c', label: 'C) a baby hen' },
+//                 { value: 'd', label: 'D) a cook' },
+//             ],
+//             syncData: [
+//                 { "end": "1.00", "start": "0.50", "text": "2. The " },
+//                 { "end": "1.70", "start": "1.00", "text": " young" },
+//                 { "end": "2.00", "start": "1.70", "text": " of" },
+//                 { "end": "2.30", "start": "2.00", "text": " a" },
+//                 { "end": "2.60", "start": "2.30", "text": " hen" },
+//                 { "end": "2.95", "start": "2.60", "text": " is?" }
+//             ],
+//             audioSrc: '/audio/activity_section3.mp3',
+//             correctAudioSrc: '/audio/audio3.mp3',
+//             incorrectAudioSrc: '/audio/activity_section3_answer2.mp3',
+//         },
+//         {
+//             questionText: "3.In the story, who was the first to hatch?",
+//             correctAnswer: 'b',
+//             options: [
+//                 { value: 'a', label: 'A) the chick' },
+//                 { value: 'b', label: 'B) the duckling' },
+//                 { value: 'c', label: 'C) the baby hen' },
+//                 { value: 'd', label: 'D) the chikku' },
+//             ],
+//             syncData: [
+//                 { "end": "1.00", "start": "0.60", "text": "3. In" },
+//                 { "end": "1.30", "start": "1.00", "text": " the" },
+//                 { "end": "1.90", "start": "1.30", "text": " story," },
+//                 { "end": "2.30", "start": "1.90", "text": " who" },
+//                 { "end": "2.60", "start": "2.30", "text": " was" },
+//                 { "end": "2.90", "start": "2.60", "text": " the" },
+//                 { "end": "3.35", "start": "2.90", "text": " first" },
+//                 { "end": "3.70", "start": "3.35", "text": " to" },
+//                 { "end": "4.10", "start": "3.70", "text": " hatch?" }
+//             ],
+//             audioSrc: '/audio/activity_section4.mp3',
+//             correctAudioSrc: '/audio/audio3.mp3',
+//             incorrectAudioSrc: '/audio/activity_section4_answer1.mp3',
+//         },
+//         {
+//             questionText: "4.What does the chick do?",
+//             correctAnswer: 'a',
+//             options: [
+//                 { value: 'a', label: 'A) follows the duckling.' },
+//                 { value: 'b', label: 'B) leads the duckling.' },
+//                 { value: 'c', label: 'C) goes to the pond for swimming.' },
+//                 { value: 'd', label: 'D) sleeps in the egg.' },
+//             ],
+//             syncData: [
+//                 { "end": "1.05", "start": "0.65", "text": "4. What" },
+//                 { "end": "1.50", "start": "1.05", "text": " does" },
+//                 { "end": "1.85", "start": "1.50", "text": " the" },
+//                 { "end": "2.20", "start": "1.85", "text": " chick" },
+//                 { "end": "3.30", "start": "2.20", "text": " do?" },
+//                 { "end": "3.70", "start": "3.30", "text": " The" },
+//                 { "end": "4.20", "start": "3.70", "text": " chick" }
+//             ],
+//             audioSrc: '/audio/activity_section5.mp3',
+//             correctAudioSrc: '/audio/audio4.mp3',
+//             incorrectAudioSrc: '/audio/activity_section5_answer2.mp3',
+//         },
+//         {
+//             questionText: "5.The chick was about to drown because he",
+//             correctAnswer: 'c',
+//             options: [
+//                 { value:'a', label: 'A) liked to drown.' },
+//                 { value:'b', label: 'B) wanted to see if the duckling would help him.'},
+//                 { value:'c', label: 'C) did not know how to swim.'},
+//                 { value:'d', label: 'D) wanted to drink more water.'}
+//             ],
+//             syncData:[
+//                 { "end": "0.40", "start": "0.10", "text": "5. The" },
+//                 { "end": "0.90", "start": "0.40", "text": " chick" },
+//                 { "end": "1.20", "start": "0.90", "text": " was" },
+//                 { "end": "1.70", "start": "1.20", "text": " about" },
+//                 { "end": "2.00", "start": "1.70", "text": " to" },
+//                 { "end": "2.50", "start": "2.00", "text": " drown" },
+//                 { "end": "3.10", "start": "2.50", "text": " because" },
+//                 { "end": "3.50", "start": "3.10", "text": " he" }
+//             ],
+//             audioSrc: '/audio/activity_section6.mp3',
+//             correctAudioSrc: '/audio/good.mp3',
+//             incorrectAudioSrc: '/audio/activity_section6_answer1.mp3',
+//         },
+//         {
+//             questionText: "6. Who saved the chick from drowning?",
+//             correctAnswer: 'd',
+//             options: [
+//                 { value: 'a', label: 'A) the fish.' },
+//                 { value: 'b', label: 'B) the fisherman.' },
+//                 { value: 'c', label: 'C) the tortoise.'},
+//                 { value: 'd', label: 'D) the duckling.' }
+//                 ],
+//                 syncData:[
+//                     { "end": "0.50", "start": "0.10", "text": "6. Who" },
+//                     { "end": "1.10", "start": "0.50", "text": " saved" },
+//                     { "end": "1.40", "start": "1.10", "text": " the" },
+//                     { "end": "1.80", "start": "1.40", "text": " chick" },
+//                     { "end": "2.20", "start": "1.80", "text": " from" },
+//                     { "end": "2.80", "start": "2.20", "text": " drowning?" }
+//                 ],
+//                 audioSrc: 'audio/activity_section7.mp3',
+//                 correctAudioSrc: 'audio/good.mp3',
+//                 incorrectAudioSrc: 'audio/activity_section7_answer1.mp3',
+//         },
+//                 {
+//             questionText: "7. Did the chick follow duckling to the pond again?",
+//             correctAnswer: 'b',
+//             options: [
+//                 { value: 'a', label: 'A) Yes.' },
+//                 { value: 'b', label: 'B) No'},
+//                 ],
+//                 syncData:[
+//                     { "end": "0.90", "start": "0.30", "text": "7. Did " },
+//                     { "end": "1.20", "start": "0.90", "text": " the" },
+//                     { "end": "1.60", "start": "1.20", "text": " chick" },
+//                     { "end": "2.00", "start": "1.60", "text": " follow" },
+//                     { "end": "2.40", "start": "2.00", "text": " duckling" },
+//                     { "end": "2.70", "start": "2.40", "text": " to" },
+//                     { "end": "3.00", "start": "2.70", "text": " the" },
+//                     { "end": "3.40", "start": "3.00", "text": " pond" },
+//                     { "end": "4.00", "start": "3.40", "text": " again?" }
+//                     ],
+//                     audioSrc: 'audio/activity_section8.mp3',
+//                     correctAudioSrc: 'audio/audio4.mp3',
+//                     incorrectAudioSrc: 'audio/activity_section8_answer1.mp3',
+//                     },
+// ];
+// Continue adding questions until you here
+// useEffect(() => {
+//     if (currentQuestion === -1 && !introAudioPlayed) {
+//         const introAudio = new Audio(introAudioSrc);
+//         introAudio.play();
+//         setIntroAudioPlayed(true);
+
+//         introAudio.onended = () => {
+//             setCurrentQuestion(0); // Start quiz when intro audio ends
+//         };
+//     }
+// }, [currentQuestion, introAudioPlayed]);
+
+//     const handleAnswerSelection = (e) => {
+//         const answer = e.target.value;
+//         setSelectedAnswer(answer);
+//         if (audio) {
+//             audio.pause();
+//             audio.currentTime = 0;
+//         }
+
+//         if (answer === questions[currentQuestion].correctAnswer) {
+//             setIsCorrect(true);
+//             setScore(score + 1);
+//             new Audio(questions[currentQuestion].correctAudioSrc).play();
+//         } else {
+//             setIsCorrect(false);
+//             new Audio(questions[currentQuestion].incorrectAudioSrc).play();
+//         }
+//     };
+
+//     const handleNext = () => {
+//         if (currentQuestion < questions.length - 1) {
+//             setCurrentQuestion(currentQuestion + 1);
+//             setSelectedAnswer(null);
+//             setIsCorrect(null);
+//         } else {
+//             // Handle end of quiz logic
+//             alert('Quiz completed!');
+//         }
+//     };
+//     const handlePrevious = () => {
+//         if (currentQuestion > 0) {
+//             setCurrentQuestion(currentQuestion - 1);
+//             setSelectedAnswer(null);
+//             setIsCorrect(null);
+//         }
+//     };
+
+//     const handleMuteUnmute = () => {
+//         if (audio) {
+//             audio.muted = !audio.muted;
+//         }
+//     };
+
+//     const handleHome = () => {
+//         window.location.href = './app.js'// Logic to navigate back to home
+//     };
+
+//     useEffect(() => {
+//         // Play activity question audio on component mount
+//         if (currentQuestion >= 0 && currentQuestion < questions.length) {
+//         const activityAudio = new Audio(questions[currentQuestion].audioSrc);
+//         activityAudio.play();
+//         setAudio(activityAudio);
+
+//         const interval = setInterval(() => {
+//             const currentTime = activityAudio.currentTime;
+
+//             // Highlight text based on current time
+            
+//             const currentText = questions[currentQuestion].syncData.find((data) =>
+//             currentTime >= parseFloat(data.start) && currentTime <= parseFloat(data.end)
+//             );
+
+//             if (currentText) {
+//                 setHighlightedText(currentText.text);
+//             } else {
+//                 setHighlightedText('');
+//             }
+//         }, 100);
+
+//         return () => {
+//             activityAudio.pause();
+//             activityAudio.currentTime = 0;
+//             clearInterval(interval);
+//         };
+//     }
+// }, [currentQuestion]);
+
+//     return (
+//         <div className="activity-container">
+//             {currentQuestion === -1 ? (
+//                 <>
+//                     <h2>Welcome to the Duckling Quiz!</h2>
+//                     <p>You'll be asked a series of questions about ducks and chicks. Listen carefully to the audio and choose the correct answers. Good luck!</p>
+//                     <button onClick={() => setCurrentQuestion(0)}>Start Quiz</button>
+//                 </>
+//             ) : (
+//                 <>
+//                     <h2>
+//                         {questions[currentQuestion].syncData.map((data, index) => (
+//                             <span
+//                                 key={index}
+//                                 style={{
+//                                     backgroundColor: highlightedText === data.text ? 'yellow' : 'transparent',
+//                                     transition: 'background-color 0.1s ease',
+//                                 }}
+//                             >
+//                                 {data.text}
+//                             </span>
+//                         ))}
+//                     </h2>
+//                     <div className="options">
+//                         {questions[currentQuestion].options.map((option, index) => (
+//                             <div key={index}>
+//                                 <input
+//                                     type="radio"
+//                                     id={`option${index}`}
+//                                     name="quiz"
+//                                     value={option.value}
+//                                     checked={selectedAnswer === option.value}
+//                                     onChange={handleAnswerSelection}
+//                                 />
+//                                 <label htmlFor={`option${index}`}>{option.label}</label>
+//                             </div>
+//                         ))}
+//                     </div>
+//                     {isCorrect !== null && (
+//                         <div className={`feedback ${isCorrect ? 'correct' : 'incorrect'}`}>
+//                             {isCorrect ? 'Correct!' : 'Incorrect!'}
+//                         </div>
+//                     )}
+//                     <div className="score-footer">
+//                         <button onClick={handleHome}>Home</button>
+//                         <button onClick={handlePrevious}>Previous</button>
+//                         <button onClick={handleNext}>Next</button>
+//                         <button onClick={handleMuteUnmute}>Mute/Unmute</button>
+//                         <div className="score">
+//                             <span className="scrorecorrectbox">✔ {score}</span>
+//                             <span className="scrorewrongbox">✖ {isCorrect === false ? 1 : 0}</span>
+//                         </div>
+//                     </div>
+//                 </>
+//             )}
+//         </div>
+//     );
+// };
+//     export default ActivityPage;
+// useEffect(() => {
+//     if (currentQuestion === -1 && !introAudioPlayed) {
+//         const introAudio = new Audio(introAudioSrc);
+//         introAudio.play();
+//         setIntroAudioPlayed(true);
+
+//         introAudio.onended = () => {
+//             setCurrentQuestion(0); // Start quiz when intro audio ends
+//         };
+//     }
+// }, [currentQuestion, introAudioPlayed]);
+
+// const handleAnswerSelection = (e) => {
+//     const answer = e.target.value;
+//     setSelectedAnswer(answer);
+//     if (audio) {
+//         audio.pause();
+//         audio.currentTime = 0;
+//     }
+
+//     const currentCorrect = answer === questions[currentQuestion].correctAnswer;
+//     setIsCorrect(currentCorrect);
+//     setScore(score + (currentCorrect ? 1 : 0));
+
+//     setSelectedAnswers(prev => [
+//         ...prev,
+//         {
+//             question: questions[currentQuestion].questionText,
+//             selectedAnswer: answer,
+//             correctAnswer: questions[currentQuestion].correctAnswer,
+//             isCorrect: currentCorrect
+//         }
+//     ]);
+
+//     new Audio(currentCorrect ? questions[currentQuestion].correctAudioSrc : questions[currentQuestion].incorrectAudioSrc).play();
+// };
+
+// const handleNext = () => {
+//     if (currentQuestion < questions.length - 1) {
+//         setCurrentQuestion(currentQuestion + 1);
+//         setSelectedAnswer(null);
+//         setIsCorrect(null);
+//     } else {
+//         // End of quiz logic
+//         setQuizCompleted(true);
+//     }
+// };
+
+// const handlePrevious = () => {
+//     if (currentQuestion > 0) {
+//         setCurrentQuestion(currentQuestion - 1);
+//         setSelectedAnswer(null);
+//         setIsCorrect(null);
+//     }
+// };
+
+// const handleMuteUnmute = () => {
+//     if (audio) {
+//         audio.muted = !audio.muted;
+//     }
+// };
+
+// const handleHome = () => {
+//     window.location.href = './app.js'; // Logic to navigate back to home
+// };
+
+// useEffect(() => {
+//     // Play activity question audio on component mount
+//     if (currentQuestion >= 0 && currentQuestion < questions.length) {
+//         const activityAudio = new Audio(questions[currentQuestion].audioSrc);
+//         activityAudio.play();
+//         setAudio(activityAudio);
+
+//         const interval = setInterval(() => {
+//             const currentTime = activityAudio.currentTime;
+
+//             const currentText = questions[currentQuestion].syncData.find((data) =>
+//                 currentTime >= parseFloat(data.start) && currentTime <= parseFloat(data.end)
+//             );
+
+//             if (currentText) {
+//                 setHighlightedText(currentText.text);
+//             } else {
+//                 setHighlightedText('');
+//             }
+//         }, 100);
+
+//         return () => {
+//             activityAudio.pause();
+//             activityAudio.currentTime = 0;
+//             clearInterval(interval);
+//         };
+//     }
+// }, [currentQuestion]);
+
+// const getBadge = () => {
+//     if (score === questions.length) return 'Gold';
+//     if (score >= questions.length * 0.7) return 'Silver';
+//     return 'Bronze';
+// };
+
+// const getIncorrectCount = () => {
+//     return selectedAnswers.filter(answer => !answer.isCorrect).length;
+// };
+
+// return (
+//     <div className="activity-container">
+//         {currentQuestion === -1 ? (
+//             <>
+//                 <h2>Welcome to the Duckling Quiz!</h2>
+//                 <p>You'll be asked a series of questions about ducks and chicks. Listen carefully to the audio and choose the correct answers. Good luck!</p>
+//                 {/* <button onClick={() => setCurrentQuestion(0)}>Start Quiz</button>
+//                 <button onClick={handleQuiz}>
+//                 <img src={`${process.env.PUBLIC_URL}/audio/common/start.png`} alt="Start Quiz" />
+//             </button> */}
+//             <button onClick={() => setCurrentQuestion(0)} className="start-quiz-button">
+//                 <img src="/audio/common/start.png" aly="Start Quiz" className="start-quiz-image" />
+//             </button>
+//             </>
+//         ) : (
+//             <>
+//                 {!quizCompleted ? (
+//                     <>
+//                         <h2>
+//                             {questions[currentQuestion].syncData.map((data, index) => (
+//                                 <span
+//                                     key={index}
+//                                     style={{
+//                                         backgroundColor: highlightedText === data.text ? 'yellow' : 'transparent',
+//                                         transition: 'background-color 0.1s ease',
+//                                     }}
+//                                 >
+//                                     {data.text}
+//                                 </span>
+//                             ))}
+//                         </h2>
+//                         <div className="options">
+//                             {questions[currentQuestion].options.map((option, index) => (
+//                                 <div key={index}>
+//                                     <input
+//                                         type="radio"
+//                                         id={`option${index}`}
+//                                         name="quiz"
+//                                         value={option.value}
+//                                         checked={selectedAnswer === option.value}
+//                                         onChange={handleAnswerSelection}
+//                                     />
+//                                     <label htmlFor={`option${index}`}>{option.label}</label>
+//                                 </div>
+//                             ))}
+//                         </div>
+//                         {isCorrect !== null && (
+//                             <div className={`feedback ${isCorrect ? 'correct' : 'incorrect'}`}>
+//                                 {isCorrect ? 'Correct!' : 'Incorrect!'}
+//                             </div>
+//                         )}
+//                         <div className="score-footer">
+//                             <button onClick={handleHome}>Home</button>
+//                             <button onClick={handlePrevious}>Previous</button>
+//                             <button onClick={handleNext}>Next</button>
+//                             <button onClick={handleMuteUnmute}>Mute/Unmute</button>
+//                             <div className="score">
+//                                 <span className="scrorecorrectbox">✔ {score}</span>
+//                                 <span className="scrorewrongbox">✖ {getIncorrectCount()}</span>
+//                             </div>
+//                         </div>
+//                     </>
+//                 ) : (
+//                     <>
+//                         <h2>Quiz Completed!</h2>
+//                         <p>Your Score: {score} / {questions.length}</p>
+//                         <p>Rank: {getBadge()} Badge</p>
+//                         <h3>Your Answers:</h3>
+//                         <ul>
+//                             {selectedAnswers.map((answer, index) => (
+//                                 <li key={index}>
+//                                     <strong>{answer.question}</strong><br/>
+//                                     Your Answer: {answer.selectedAnswer} {answer.isCorrect ? '✔' : '✖'}<br/>
+//                                     Correct Answer: {answer.correctAnswer}
+//                                 </li>
+//                             ))}
+//                         </ul>
+//                         <button onClick={handleHome}>Back to Home</button>
+//                     </>
+//                 )}
+//             </>
+//         )}
+//     </div>
+// );
+// };
+
+// export default ActivityPage;
+// // ActivityPage.js
+// import React, { useEffect, useState } from 'react';
+// import './ActivityPage.css';
+
+// const ActivityPage = () => {
+//     const [selectedAnswer, setSelectedAnswer] = useState(null);
+//     const [score, setScore] = useState(0);
+//     const [isCorrect, setIsCorrect] = useState(null);
+//     const [audio, setAudio] = useState(null);
+//     const [highlightedText, setHighlightedText] = useState('');
+//     const [currentQuestion, setCurrentQuestion] = useState(-1);
+//     const [introAudioPlayed, setIntroAudioPlayed] = useState(false);
+//     const [selectedAnswers, setSelectedAnswers] = useState([]);
+//     const [quizCompleted, setQuizCompleted] = useState(false);
+//     const [questions, setQuestions] = useState([]);
+//     const [introAudioSrc, setIntroAudioSrc] = useState('');
+
+//     useEffect(() => {
+//         fetch(`${process.env.PUBLIC_URL}/audio/ActivityPage.json`)
+//             .then(response => response.json())
+//             .then(data => {
+//                 setQuestions(data.questions);
+//                 setIntroAudioSrc(data.introAudioSrc);
+//             })
+//             .catch(error => console.error('Error fetching activity data:', error));
+//     }, []);
+//     useEffect(() => {
+//         if (currentQuestion === 0 && !introAudioPlayed && introAudioSrc) {
+//             const introAudio = new Audio(introAudioSrc);
+//             introAudio.play();
+//             setIntroAudioPlayed(true);
+    
+//             introAudio.onended = () => {
+//                 // No need to automatically start the quiz here
+//             };
+//         }
+//     }, [currentQuestion, introAudioPlayed, introAudioSrc]);
+
+//     const handleAnswerSelection = (e) => {
+//         const selectedValue = e.target.value;
+//         const selectedLabel = e.target.nextSibling.innerText; // Fetch the label text
+        
+//         setSelectedAnswer(selectedValue);
+//         if (audio) {
+//             audio.pause();
+//             audio.currentTime = 0;
+//         }
+
+//         const currentCorrect = selectedValue === questions[currentQuestion].correctAnswer;
+//         setIsCorrect(currentCorrect);
+//         setScore(score + (currentCorrect ? 1 : 0));
+
+//         setSelectedAnswers(prev => [
+//             ...prev,
+//             {
+//                 question: questions[currentQuestion].questionText,
+//                 selectedAnswer: selectedLabel, // Store the label instead of value
+//                 correctAnswer: questions[currentQuestion].options.find(
+//                     option => option.value === questions[currentQuestion].correctAnswer
+//                 ).label, // Store the correct answer's label
+//                 isCorrect: currentCorrect,
+//             }
+//         ]);
+
+//         new Audio(currentCorrect ? questions[currentQuestion].correctAudioSrc : questions[currentQuestion].incorrectAudioSrc).play();
+//     };
+
+//     const handleNext = () => {
+//         if (currentQuestion < questions.length - 1) {
+//             setCurrentQuestion(currentQuestion + 1);
+//             setSelectedAnswer(null);
+//             setIsCorrect(null);
+//         } else {
+//             // End of quiz logic
+//             setQuizCompleted(true);
+//         }
+//     };
+
+//     const handlePrevious = () => {
+//         if (currentQuestion > 0) {
+//             setCurrentQuestion(currentQuestion - 1);
+//             setSelectedAnswer(null);
+//             setIsCorrect(null);
+//         }
+//     };
+
+//     const handleMuteUnmute = () => {
+//         if (audio) {
+//             audio.muted = !audio.muted;
+//         }
+//     };
+
+//     const handleHome = () => {
+//         window.location.href = './app.js'; // Logic to navigate back to home
+//     };
+//     const handleStartQuiz = () => {
+//         if (introAudioSrc) {
+//             const introAudio = new Audio(introAudioSrc);
+//             introAudio.play();
+//             introAudio.onended = () => {
+//                 setCurrentQuestion(0); // Start the quiz after the intro audio ends
+//             };
+//         } else {
+//             setCurrentQuestion(0); // Start the quiz if there's no intro audio
+//         }
+//     };
+
+//     useEffect(() => {
+//                 if (currentQuestion >= 0 && currentQuestion < questions.length) {
+//                     const activityAudio = new Audio(questions[currentQuestion].audioSrc);
+//                     activityAudio.play();
+//                     setAudio(activityAudio);
+//                 let wordIndex = 0;
+//         const syncData = questions[currentQuestion].syncData;
+        
+//         const interval = setInterval(() => {
+//             const currentTime = activityAudio.currentTime;
+//             const currentText = syncData[wordIndex];
+//                 if (currentText && currentTime >= parseFloat(currentText.start) && currentTime <= parseFloat(currentText.end)) {
+//                     setHighlightedText(currentText.text);
+//                     wordIndex++;
+//                 } else {
+//                     setHighlightedText('');
+//                 }
+//             }, 100);
+
+//             return () => {
+//                 activityAudio.pause();
+//                 activityAudio.currentTime = 0;
+//                 clearInterval(interval);
+//             };
+//         }
+//     }, [currentQuestion]);
+
+//     const getBadge = () => {
+//         if (score === questions.length) return 'Gold';
+//         if (score >= questions.length * 0.7) return 'Silver';
+//         return 'Bronze';
+//     };
+
+//     const getIncorrectCount = () => {
+//         return selectedAnswers.filter(answer => !answer.isCorrect).length;
+//     };
+
+//     return (
+//         <div className="activity-container">
+//             {currentQuestion === -1 ? (
+//                 <>
+//                     <h2>Welcome to the Duckling Quiz!</h2>
+//                     <p>You'll be asked a series of questions about ducks and chicks. Listen carefully to the audio and choose the correct answers. Good luck!</p>
+//                     <button onClick={handleStartQuiz} className="start-quiz-button">
+//                     <img src="/audio/common/start.png" alt="Start Quiz" className="start-quiz-image" />
+//                     </button>
+//                 </>
+//             ) : (
+//                 <>
+//                     {!quizCompleted ? (
+//                         <>
+//                             <h2>
+//                                 {questions[currentQuestion].syncData.map((data, index) => (
+//                                     <span
+//                                         key={index}
+//                                         style={{
+//                                             backgroundColor: highlightedText === data.text ? 'yellow' : 'transparent',
+//                                             transition: 'background-color 0.1s ease',
+//                                         }}
+//                                     >
+//                                         {data.text}
+//                                     </span>
+//                                 ))}
+//                             </h2>
+//                             <div className="options">
+//                                 {questions[currentQuestion].options.map((option, index) => (
+//                                     <div key={index}>
+//                                         <input
+//                                             type="radio"
+//                                             id={`option${index}`}
+//                                             name="quiz"
+//                                             value={option.value}
+//                                             checked={selectedAnswer === option.value}
+//                                             onChange={handleAnswerSelection}
+//                                         />
+//                                         <label htmlFor={`option${index}`}>{option.label}</label>
+//                                     </div>
+//                                 ))}
+//                             </div>
+//                             {isCorrect !== null && (
+//                                 <div className={`feedback ${isCorrect ? 'correct' : 'incorrect'}`}>
+//                                     {isCorrect ? 'Correct!' : 'Incorrect!'}
+//                                 </div>
+//                             )}
+//                             <div className="score-footer">
+//                                 <button onClick={handleHome}>Home</button>
+//                                 <button onClick={handlePrevious}>Previous</button>
+//                                 <button onClick={handleNext}>Next</button>
+//                                 <button onClick={handleMuteUnmute}>Mute/Unmute</button>
+//                                 <div className="score">
+//                                     <span className="scrorecorrectbox">✔ {score}</span>
+//                                     <span className="scrorewrongbox">✖ {getIncorrectCount()}</span>
+//                                 </div>
+//                             </div>
+//                         </>
+//                     ) : (
+//                         <>
+//                             <h2>Quiz Completed!</h2>
+//                             <p>Your Score: {score} / {questions.length}</p>
+//                             <p>Rank: {getBadge()} Badge</p>
+//                             <h3>Your Answers:</h3>
+//                             <ul>
+//                                 {selectedAnswers.map((answer, index) => (
+//                                     <li key={index}>
+//                                         <strong>{answer.question}</strong><br/>
+//                                         Your Answer: {answer.selectedAnswer} {answer.isCorrect ? '✔' : '✖'}<br/>
+//                                         Correct Answer: {answer.correctAnswer}
+//                                     </li>
+//                                 ))}
+//                             </ul>
+//                             <button onClick={handleHome}>Back to Home</button>
+//                         </>
+//                     )}
+//                 </>
+//             )}
+//         </div>
+//     );
+// };
+
+// export default ActivityPage;
+// import React, { useEffect, useState } from 'react';
+// import './ActivityPage.css';
+
+// const ActivityPage = () => {
+//     const [selectedAnswer, setSelectedAnswer] = useState(null);
+//     const [score, setScore] = useState(0);
+//     const [isCorrect, setIsCorrect] = useState(null);
+//     const [audio, setAudio] = useState(null);
+//     const [highlightedText, setHighlightedText] = useState('');
+//     const [currentQuestion, setCurrentQuestion] = useState(-1);
+//     const [selectedAnswers, setSelectedAnswers] = useState([]);
+//     const [quizCompleted, setQuizCompleted] = useState(false);
+//     const [questions, setQuestions] = useState([]);
+
+//     useEffect(() => {
+//         fetch(`${process.env.PUBLIC_URL}/audio/ActivityPage.json`)
+//             .then(response => response.json())
+//             .then(data => setQuestions(data.questions))
+//             .catch(error => console.error('Error fetching activity data:', error));
+//     }, []);
+
+//     const handleAnswerSelection = (e) => {
+//         const selectedValue = e.target.value;
+//         const selectedLabel = e.target.nextSibling.innerText;
+
+//         setSelectedAnswer(selectedValue);
+//         if (audio) {
+//             audio.pause();
+//             audio.currentTime = 0;
+//         }
+
+//         const currentCorrect = selectedValue === questions[currentQuestion].correctAnswer;
+//         setIsCorrect(currentCorrect);
+//         setScore(score + (currentCorrect ? 1 : 0));
+
+//         setSelectedAnswers(prev => [
+//             ...prev,
+//             {
+//                 question: questions[currentQuestion].questionText,
+//                 selectedAnswer: selectedLabel,
+//                 correctAnswer: questions[currentQuestion].options.find(
+//                     option => option.value === questions[currentQuestion].correctAnswer
+//                 ).label,
+//                 isCorrect: currentCorrect,
+//             }
+//         ]);
+
+//         new Audio(currentCorrect ? questions[currentQuestion].correctAudioSrc : questions[currentQuestion].incorrectAudioSrc).play();
+//     };
+
+//     const handleNext = () => {
+//         if (currentQuestion < questions.length - 1) {
+//             setCurrentQuestion(currentQuestion + 1);
+//             setSelectedAnswer(null);
+//             setIsCorrect(null);
+//         } else {
+//             setQuizCompleted(true);
+//         }
+//     };
+
+//     const handlePrevious = () => {
+//         if (currentQuestion > 0) {
+//             setCurrentQuestion(currentQuestion - 1);
+//             setSelectedAnswer(null);
+//             setIsCorrect(null);
+//         }
+//     };
+//     const handleMuteUnmute = () => {
+//                 if (audio) {
+//                     audio.muted = !audio.muted;
+//                 }
+//             };
+//     const handleHome = () => {
+//         window.location.href = './app.js';
+//     };
+
+//     const handleStartQuiz = () => {
+//         setCurrentQuestion(0);
+//     };
+
+//     useEffect(() => {
+//         if (currentQuestion >= 0 && currentQuestion < questions.length) {
+//             const activityAudio = new Audio(questions[currentQuestion].audioSrc);
+//             activityAudio.play();
+//             setAudio(activityAudio);
+
+//             let wordIndex = 0;
+//             const syncData = questions[currentQuestion].syncData;
+
+//             const interval = setInterval(() => {
+//                 const currentTime = activityAudio.currentTime;
+//                 const currentText = syncData[wordIndex];
+//                 if (currentText && currentTime >= parseFloat(currentText.start) && currentTime <= parseFloat(currentText.end)) {
+//                     setHighlightedText(currentText.text);
+//                     wordIndex++;
+//                 } else {
+//                     setHighlightedText('');
+//                 }
+//             }, 100);
+
+//             return () => {
+//                 activityAudio.pause();
+//                 activityAudio.currentTime = 0;
+//                 clearInterval(interval);
+//             };
+//         }
+//     }, [currentQuestion]);
+
+//     const getBadge = () => {
+//         if (score === questions.length) return 'Excellent! You are outstanding. Keep shining! ';
+//         if (score >= questions.length * 0.7) return 'Very Good! Keep pushing the limits.';
+//         return 'Keep Learning! Your next result will be better.';
+//     };
+
+//     const getIncorrectCount = () => {
+//         return selectedAnswers.filter(answer => !answer.isCorrect).length;
+//     };
+
+//     return (
+//         <div className="activity-container">
+//             {currentQuestion === -1 ? (
+//                 <>
+//                     <h2>Welcome to the Quiz!</h2>
+//                     <p>You'll be asked a series of questions. Listen carefully to the audio and choose the correct answers. Good luck!</p>
+//                     <button onClick={handleStartQuiz} className="start-quiz-button">
+//                         <img src="/audio/common/start.png" alt="Start Quiz" className="start-quiz-image" />
+//                     </button>
+//                 </>
+//             ) : (
+//                 <>
+//                     {!quizCompleted ? (
+//                         <>
+//                             <h2>
+//                                 {questions[currentQuestion].syncData.map((data, index) => (
+//                                     <span
+//                                         key={index}
+//                                         style={{
+//                                             backgroundColor: highlightedText === data.text ? 'yellow' : 'transparent',
+//                                             transition: 'background-color 0.1s ease',
+//                                         }}
+//                                     >
+//                                         {data.text}
+//                                     </span>
+//                                 ))}
+//                             </h2>
+//                             <div className="options">
+//                                 {questions[currentQuestion].options.map((option, index) => (
+//                                     <div key={index} className={`option-container ${selectedAnswer === option.value ? (isCorrect ? 'correct-answer' : 'wrong-answer') : ''}`}>
+//                                         <input
+//                                             type="radio"
+//                                             id={`option${index}`}
+//                                             name="quiz"
+//                                             value={option.value}
+//                                             checked={selectedAnswer === option.value}
+//                                             onChange={handleAnswerSelection}
+//                                         />
+//                                         <label htmlFor={`option${index}`}>{option.label}</label>
+//                                     </div>
+//                                 ))}
+//                             </div>
+//                             {isCorrect !== null && (
+//                                 <div className={`feedback ${isCorrect ? 'correct' : 'incorrect'}`}>
+//                                     {isCorrect ? 'Correct!' : 'Incorrect!'}
+//                                 </div>
+//                             )}
+//                             <div className="score-footer">
+//                                 <button onClick={handleMuteUnmute}>Mute/Unmute</button>
+//                                 <button onClick={handleHome}>Home</button>
+//                                 <button onClick={handlePrevious}>Previous</button>
+//                                 <button onClick={handleNext}>Next</button>
+//                                 <div className="score">
+//                                     <span className="scrorecorrectbox">✔ {score}</span>
+//                                     <span className="scrorewrongbox">✖ {getIncorrectCount()}</span>
+//                                 </div>
+//                             </div>
+//                         </>
+//                     ) : (
+//                         <>
+//                         <div className="congratulations">
+//                         <h1> {getBadge()} </h1>
+//                                 <img src="/audio/common/cup.gif" alt="Trophy" className="trophy-image" />
+//                             </div>
+//                             <h5>Quiz Completed!</h5>
+//                             <p>Your Score: {score} / {questions.length}</p>
+//                             <h3>Your Answers:</h3>
+//                             <ul className="answers-list">
+//     {selectedAnswers.map((answer, index) => (
+//         <li key={index} className={`answer-item ${answer.isCorrect ? 'correct-answer' : 'wrong-answer'}`}>
+//             <strong className="question-label">{answer.question}</strong><br />
+//             <span className="user-answer">
+//                 {answer.isCorrect ? '✔' : '✖'} {answer.selectedAnswer}
+//             </span><br />
+//             {!answer.isCorrect && (
+//                 <span className="correct-answer-display">Correct Answer: {answer.correctAnswer}</span>
+//             )}
+//         </li>
+//     ))}
+// </ul>
+
+//                             {/* <ul className="answers-list">
+//                                 {selectedAnswers.map((answer, index) => (
+//                                     <li key={index} className="answer-item">
+//                                         <strong className="question-label">{answer.question}</strong><br />
+//                                         <span className={`user-answer ${answer.isCorrect ? 'correct-answer' : 'wrong-answer'}`}>{answer.selectedAnswer}</span><br />
+//                                         {!answer.isCorrect && (
+//                                             <span className="correct-answer-display">Correct Answer: <span className="correct-answer">{answer.correctAnswer}</span></span>
+//                                         )}
+//                                     </li>
+//                                 ))}
+//                             </ul> */}
+//                             {/* <h5>Quiz Completed!</h5>
+//                             <p>Your Score: {score} / {questions.length}</p>
+//                             <h3>Your Answers:</h3>
+// <ul className="answers-list">
+//     {selectedAnswers.map((answer, index) => (
+//         <li
+//             key={index}
+//             className={`answer-item ${answer.isCorrect ? 'correct-answer' : 'wrong-answer'}`}
+//         >
+//             <strong>{answer.question}</strong><br />
+//             <span className="user-answer">{answer.selectedAnswer}</span>
+//             <span className="correct-answer-label">Correct Answer{answer.correctAnswer}</span>
+//         </li>
+//     ))}
+// </ul> */}
+//                             <button onClick={handleHome}>Back to Home</button>
+//                         </>
+//                     )}
+//                 </>
+//             )}
+//         </div>
+//     );
+// };
+
+// export default ActivityPage;

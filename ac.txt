@@ -1,0 +1,729 @@
+var currentActivityId = 1;
+var totalActivities;
+var scroreActivity1 = 0;
+var scroreActivity2 = 0;
+var scroreActivity3 = 0;
+var scroreActivity4 = 0;
+var scroreActivity5 = 0;
+var correctAnswerScore = 0;
+var wrongAnswerScore = 0
+var correctAnswerSounds = ["good", "greatwork", "verygood", "youarecorrect", "youaresuberb"];
+var correctAnswerSoundsResourcePath = "resources/sounds/common/";
+var arrCorrectAnswers = [];
+var arrWrongAnswers = [];
+var slideNo;
+$(document).ready(function () {
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+    slideNo = getUrlParameter('SlideNo');
+    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) { isSafariBrowser = true; }
+
+    totalSections = $(document).find("div.sectiontext");
+    totalActivities = $(document).find("div.activity_sectiontext");
+    $("#start").on("vclick", function () {
+        initializeSlide(1);
+        document.getElementById("navcontrols").style.display = "block";
+        $(this).hide();
+    });
+
+    //onclick of next button
+    $('#next').unbind('click').bind('click', function (e) {
+        syncData = [];
+        element = "";
+        currentlyPlaying = false;
+
+        if (currentSectionId >= totalSections.length) {
+            $("#activity").css("visibility", "visible");
+            $("#activity").show();
+        }
+        else {
+            $("#activity").css("visibility", "hidden");
+            $("#activity").hide();
+        }
+
+
+        if (currentSectionId > totalSections.length + 1)
+            return;
+        $("#slide" + currentSectionId).animate({
+            left: '-150%'
+        }, 500);
+        $("#slide" + (currentSectionId + 1)).animate({
+            left: '0'
+        }, 500);
+
+        $("#previous").prop('disabled', false).removeClass("ui-disabled");
+
+        if (currentSectionId == totalSections.length)
+
+            $("#next").prop('disabled', true).addClass("ui-disabled");
+        else
+            $("#next").prop('disabled', false).removeClass("ui-disabled");
+
+        currentSectionId += 1;
+        sectionIdActive = currentSectionId;
+        initializeSlide(currentSectionId);
+        $("#pauseimg").removeClass("icon-play-2");
+        $("#pauseimg").addClass("icon-pause-2");
+        $("#pause").attr("title", "Pause the story");
+        $("#pause .ui-btn-text").text("PAUSE");
+        isPaused = false;
+
+        //$("#volumeimg").removeClass("icon-volume-2");
+        //$("#volumeimg").addClass("icon-volume");
+        //$("#volume").attr("title", "Mute sound");
+        //$("#volume .ui-btn-text").text("MUTE");
+        //isVolumeMuted = false;
+        if (isVolumeMuted) {
+            soundPlayer.volume = 0;
+        }
+        else {
+            soundPlayer.volume = 1;
+        }
+
+
+    });
+    $('#previous').unbind('click').bind('click', function (e) {
+        syncData = [];
+        element = "";
+        if (currentSectionId <= 1) return;
+
+        $("#slide" + currentSectionId).animate({
+            left: '150%'
+        }, 500);
+        $("#slide" + (currentSectionId - 1)).animate({
+            left: '0'
+        }, 500);
+        currentSectionId -= 1;
+        $("#next").removeClass("ui-disabled");
+        $("#activity").css("visibility", "hidden");
+        if (currentSectionId == 1)
+            $("#previous").prop('disabled', true).addClass("ui-disabled");
+        else
+            $("#previous").prop('disabled', false).removeClass("ui-disabled");
+
+        soundPlayer.currentTime = 0;
+
+        initializeSlide(currentSectionId);
+        $("#pauseimg").removeClass("icon-play-2");
+        $("#pauseimg").addClass("icon-pause-2");
+        $("#pause").attr("title", "Pause the story");
+        $("#pause .ui-btn-text").text("PAUSE");
+        isPaused = false;
+
+        //$("#volumeimg").removeClass("icon-volume-2");
+        //$("#volumeimg").addClass("icon-volume");
+        //$("#volume").attr("title", "Mute sound");
+        //$("#volume .ui-btn-text").text("MUTE");
+        //isVolumeMuted = false;
+        if (isVolumeMuted) {
+            soundPlayer.volume = 0;
+        }
+        else {
+            soundPlayer.volume = 1;
+        }
+    });
+        $("#volume").on("vclick", function () {
+            if (!isVolumeMuted) {
+                $("#volumeimg").removeClass("icon-volume");
+                $("#volumeimg").addClass("icon-volume-2");
+                $(this).attr("title", "Unmute sound");
+                $("#volume .ui-btn-text").text("UNMUTE");
+            } else {
+                $("#volumeimg").removeClass("icon-volume-2");
+                $("#volumeimg").addClass("icon-volume");
+                $(this).attr("title", "Mute sound");
+                $("#volume .ui-btn-text").text("MUTE");
+            }
+
+            isVolumeMuted = !isVolumeMuted;
+
+            if (isVolumeMuted)
+                soundPlayer.volume = 0;
+            else
+                soundPlayer.volume = 1;
+        });
+
+        $("#pause").on("vclick", function () {
+            if (soundPlayer != undefined) {
+                if (!isPaused) {
+                    $("#pauseimg").removeClass("icon-pause-2");
+                    $("#pauseimg").addClass("icon-play-2");
+                    $(this).attr("title", "Play the story");
+                    $("#pause .ui-btn-text").text("PLAY");
+                } else {
+                    $("#pauseimg").removeClass("icon-play-2");
+                    $("#pauseimg").addClass("icon-pause-2");
+                    $(this).attr("title", "Pause the story");
+                    $("#pause .ui-btn-text").text("PAUSE");
+                }
+
+                if (!isPaused)
+                    soundPlayer.pause();
+                else
+                    soundPlayer.play();
+
+                isPaused = !isPaused;
+            }
+        });
+
+        $("#activity_volume").on("vclick", function () {
+            if (!isVolumeMuted) {
+                $("#activity_volumeimg").removeClass("icon-volume");
+                $("#activity_volumeimg").addClass("icon-volume-2");
+                $(this).attr("title", "Unmute sound");
+                // For ASIF - BEGIN
+                $("#activity_volume .ui-btn-text").text("UNMUTE");
+                // For ASIF - END
+            } else {
+                $("#activity_volumeimg").removeClass("icon-volume-2");
+                $("#activity_volumeimg").addClass("icon-volume");
+                $(this).attr("title", "Mute sound");
+                // For ASIF - BEGIN
+                $("#activity_volume .ui-btn-text").text("MUTE");
+                // For ASIF - END
+            }
+
+            isVolumeMuted = !isVolumeMuted;
+
+            if (isVolumeMuted)
+                soundPlayer.volume = 0;
+            else
+                soundPlayer.volume = 1;
+        });
+
+        $('#activity_next').unbind('click').bind('click', function (e) {
+
+            if (currentActivityId > totalActivities.length)
+                return;
+
+            $(".activityword").each(function () {
+                $(this).css("color", "#000000");
+            });
+
+            $("#activity" + currentActivityId).animate({
+                left: '-150%'
+            }, 500);
+            $("#activity" + (currentActivityId + 1)).animate({
+                left: '0'
+            }, 500);
+
+            $("#activity_previous").prop('disabled', false).removeClass("ui-disabled");
+
+            if (currentActivityId == totalActivities.length - 1)
+                $(this).prop('disabled', true).addClass("ui-disabled");
+            else
+                $(this).prop('disabled', false).removeClass("ui-disabled");
+
+            currentActivityId += 1;
+            wordCounter = 0;
+            wordsArray = [];
+            // For ASIF - BEGIN
+            soundPlayer.pause();
+            soundPlayer.currentTime = 0;
+            // For ASIF - END
+            highlightActivityText(currentActivityId);
+
+            $("#activity_volumeimg").removeClass("icon-volume-2");
+            $("#activity_volumeimg").addClass("icon-volume");
+            $("#activity_volumeimg").attr("title", "Mute sound");
+            $("#activity_volume .ui-btn-text").text("MUTE");
+            isVolumeMuted = false;
+        });
+
+        $('#activity_previous').unbind('click').bind('click', function (e) {
+
+            if (currentActivityId < 1) return;
+
+            $(".activityword").each(function () {
+                $(this).css("color", "#000000");
+            });
+
+            $("#activity" + currentActivityId).animate({
+                left: '150%'
+            }, 500);
+            $("#activity" + (currentActivityId - 1)).animate({
+                left: '0'
+            }, 500);
+
+            $("#activity_next").prop('disabled', false).removeClass("ui-disabled");
+
+            if (currentActivityId == 2)
+                $(this).prop('disabled', true).addClass("ui-disabled");
+            else
+                $(this).prop('disabled', false).removeClass("ui-disabled");
+
+            currentActivityId -= 1;
+            wordCounter = 0;
+            wordsArray = [];
+            // For ASIF - BEGIN
+            soundPlayer.pause();
+            soundPlayer.currentTime = 0;
+            // For ASIF - END
+            highlightActivityText("activity_section" + currentActivityId);
+        });
+
+        $("#activity").on("vclick", function () {
+            $("#slide13").animate({
+                left: '-150%'
+            }, 500);
+
+            $("#activity1").animate({
+                left: '0'
+            }, 500);
+
+            $("#navcontrols").hide();
+            $("#activitycontrols").show();
+            $("#scoresdisplay").show();
+            $("#activity_previous").prop('disabled', true).addClass("ui-disabled");
+            highlightActivityText(1);
+        });
+
+        $("#refresh").on("vclick", function () {
+            soundPlayer.pause();
+            soundPlayer.currentTime = 0;
+
+            $(".word").each(function () {
+                $(this).css("color", "#000000");
+            });
+
+            initializeSlide(currentSectionId);
+            $("#pauseimg").removeClass("icon-play-2");
+            $("#pauseimg").addClass("icon-pause-2");
+            $("#pause").attr("title", "Pause the story");
+            $("#pause .ui-btn-text").text("PAUSE");
+            isPaused = false;
+
+            $("#volumeimg").removeClass("icon-volume-2");
+            $("#volumeimg").addClass("icon-volume");
+            $("#volume").attr("title", "Mute sound");
+            $("#volume .ui-btn-text").text("MUTE");
+            isVolumeMuted = false;
+
+            // highlightActivityText(currentSectionId);
+        });
+
+        //$("#activityRefresh").on("vclick", function () {
+        //    soundPlayer.pause();
+        //    soundPlayer.currentTime = 0;
+        //    highlightActivityText(currentActivityId);
+        //});
+
+
+
+        $("input[type='radio']").bind("change", function (event, ui) {
+            $("#activcontent" + (currentActivityId) + " span").each(function () {
+                $(this).addClass("headercolor");
+
+            })
+            $('input[type=radio]').each(function () {
+                if ($(this).attr("name") == "activity_radio_" + (currentActivityId - 1)) {
+                    if ($(this).attr("checked") != "checked") {
+                        $(this).checkboxradio("disable").checkboxradio("refresh");
+                    }
+                }
+            });
+
+
+            if ($(this).val() == "true") {
+                arrCorrectAnswers[currentActivityId] = 1;
+                arrWrongAnswers[currentActivityId] = 0;
+            } else {
+                arrWrongAnswers[currentActivityId] = 1;
+                arrCorrectAnswers[currentActivityId] = 0;
+            }
+
+            var activityscore = $(this).val() == "true" ? 1 : 0;
+            var scroreImage = document.getElementById("check_activity_" + currentActivityId);
+
+            //soundPlayer.pause();
+            //soundPlayer.currentTime = 0;
+
+
+            if (activityscore == 1) {
+                var c = Math.floor((Math.random() * 4));
+                $(scroreImage).attr("src", "images/common/CorrectAnswerSmall.png");
+                //playAudio(correctAnswerSoundsResourcePath + correctAnswerSounds[c]);
+
+                if (soundPlayer != null && soundPlayer != undefined) {
+                    soundPlayer.pause();
+                    soundPlayer.currentTime = 0;
+                    soundPlayer = undefined;
+                }
+
+                $("#audioWrap").empty();
+                $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/common/' + correctAnswerSounds[c] + '.mp3" type="audio/mpeg">');
+                soundPlayer = document.getElementById("myAudio");
+                soundPlayer.play();
+            } else {
+                var w = Math.floor((Math.random() * 2) + 1);
+                $(scroreImage).attr("src", "images/common/WrongAnswerSmall.png");
+                //playAudio("resources/sounds/r2/book8/activity_section" + currentActivityId + "_answer" + w);
+
+                if (soundPlayer != null && soundPlayer != undefined) {
+                    soundPlayer.pause();
+                    soundPlayer.currentTime = 0;
+                    soundPlayer = undefined;
+                }
+
+                $("#audioWrap").empty();
+                $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section' + currentActivityId + "_answer" + w + '.mp3" type="audio/mpeg">');
+                soundPlayer = document.getElementById("myAudio");
+                soundPlayer.play();
+               
+            }
+
+            var ca = 0, wa = 0;
+
+            for (var j = 0; j < arrCorrectAnswers.length; j++) {
+                if (arrCorrectAnswers[j] == 1) ca += 1;
+            }
+
+            for (var k = 0; k < arrWrongAnswers.length; k++) {
+                if (arrWrongAnswers[k] == 1) wa += 1;
+            }
+
+            $(scroreImage).show();
+
+            $("div.correctscore").html(ca);
+            $("div.wrongscore").html(wa);
+
+
+        });
+        $("#backToHome").click(function () {
+            window.location.href = "../../../../../reader2index.html?SlideNo=" + slideNo;
+        });
+
+    });
+    //function playAudio(resourceName) {
+    //    soundPlayer = new Audio(resourceName + ".mp3");
+    //    if (isVolumeMuted) soundPlayer.muted = true;
+    //    soundPlayer.play();
+    //}
+
+
+    function highlightActivityText(activityId) {
+        soundPlayer.pause();
+        soundPlayer.currentTime = 0;
+
+        var subtitles;
+        var syncData = [];
+        var element = "";
+
+        if (soundPlayer != null && soundPlayer != undefined) {
+            soundPlayer.pause();
+            soundPlayer.currentTime = 0;
+            soundPlayer = undefined;
+        }
+
+        $("#audioWrap").empty();
+
+        if (activityId == 1) {
+            $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section1.mp3" type="audio/mpeg">');
+            soundPlayer = document.getElementById("myAudio");
+            soundPlayer.play();
+                syncData = [
+
+                ];
+
+                for (var i = 0; i < syncData.length; i++) {
+                    element += "<span id='c_" + i + "'>" + syncData[i].text + "</span> ";
+                }
+             }
+
+        else if (activityId == 2) {
+            $("#activcontent2").empty();
+            $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section2.mp3" type="audio/mpeg">');
+            soundPlayer = document.getElementById("myAudio");
+            soundPlayer.play();
+                for (var i = 0; i < syncData.length; i++) {
+                    element += "<span id='c_" + i + "'>" + syncData[i].text + "</span> ";
+                }
+
+                $("#activcontent2").append(element);
+                subtitles = document.getElementById("activcontent2");
+           
+        }
+
+        else if (activityId == 3) {
+            $("#activcontent3").empty();
+            $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section3.mp3" type="audio/mpeg">');
+            soundPlayer = document.getElementById("myAudio");
+            soundPlayer.play();
+            for (var i = 0; i < syncData.length; i++) {
+                element += "<span id='c_" + i + "'>" + syncData[i].text + "</span> ";
+            }
+
+            $("#activcontent3").append(element);
+            subtitles = document.getElementById("activcontent3");
+        }
+
+        else if (activityId == 4) {
+            $("#activcontent4").empty();
+            $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section4.mp3" type="audio/mpeg">');
+            soundPlayer = document.getElementById("myAudio");
+            soundPlayer.play();
+
+             (var i = 0; i < syncData.length; i++) {
+                element += "<span id='c_" + i + "'>" + syncData[i].text + "</span> ";
+            }
+
+            $("#activcontent4").append(element);
+            subtitles = document.getElementById("activcontent4");
+        }
+
+        else if (activityId == 5) {
+            $("#activcontent5").empty();
+            $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section5.mp3" type="audio/mpeg">');
+            soundPlayer = document.getElementById("myAudio");
+            soundPlayer.play();
+            for (var i = 0; i < syncData.length; i++) {
+                element += "<span id='c_" + i + "'>" + syncData[i].text + "</span> ";
+            }
+
+            $("#activcontent5").append(element);
+            subtitles = document.getElementById("activcontent5");
+        }
+        else if (activityId == 6) {
+            $("#activcontent6").empty();
+            $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section6.mp3" type="audio/mpeg">');
+            soundPlayer = document.getElementById("myAudio");
+            soundPlayer.play();
+
+            for (var i = 0; i < syncData.length; i++) {
+                element += "<span id='c_" + i + "'>" + syncData[i].text + "</span> ";
+            }
+
+            $("#activcontent6").append(element);
+            subtitles = document.getElementById("activcontent6");
+        }
+        else if (activityId == 7) {
+            $("#activcontent7").empty();
+            $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section7.mp3" type="audio/mpeg">');
+            soundPlayer = document.getElementById("myAudio");
+            soundPlayer.play();
+
+            
+            for (var i = 0; i < syncData.length; i++) {
+                element += "<span id='c_" + i + "'>" + syncData[i].text + "</span> ";
+            }
+
+            $("#activcontent7").append(element);
+            subtitles = document.getElementById("activcontent7");
+        }
+
+        else if (activityId == 8) {
+            $("#activcontent8").empty();
+            $("#audioWrap").append('<audio autoplay="autoplay" id="myAudio" controls><source src="resources/sounds/r2/book8/activity_section8.mp3" type="audio/mpeg">');
+            soundPlayer = document.getElementById("myAudio");
+            soundPlayer.play();
+
+               for (var i = 0; i < syncData.length; i++) {
+                element += "<span id='c_" + i + "'>" + syncData[i].text + "</span> ";
+            }
+
+            $("#activcontent8").append(element);
+            subtitles = document.getElementById("activcontent8");
+        }
+
+
+        soundPlayer.addEventListener("timeupdate", function (e) {
+            syncData.forEach(function (element, index, array) {
+                if (soundPlayer.currentTime >= element.start && soundPlayer.currentTime <= element.end) {
+                    subtitles.children[index].style.color = 'red';
+                    try {
+                        subtitles.children[index - 1].style.color = 'black';
+                    }
+                    catch (err) {
+                        // ignore indexOutOfBounds
+                    }
+
+                }
+                else {
+                    subtitles.children[index].style.color = 'black';
+                }
+            });
+        });
+    }
+    <div id="activity1" class="ui-body pgactivity" style="padding-top:40px">
+				<div id="activity_section1" class="activity_sectiontext" style="text-align:center;">
+					<h1><span>Activity For The Book<br/><br/>ME TOO</span></h1>
+				</div>
+			</div>
+			<div id="activity2" class="ui-body pgactivity">
+    			<div id="activity_section2" class="activity_sectiontext" style="text-align:center;margin-top:-1em">
+					<!--<h1><span>Activity For The Book<br/>ME TOO</span></h1>-->
+					<h2><span class="buttetsandnumbering" id="activcontent2"></span></h2>
+					<div style="display:inline-block"><img id="check_activity_2" style="display:none" src="images/common/CorrectAnswerSmall.png"></div>
+					<fieldset id="optionradios1">
+						<input type="radio" name="activity_radio_1" id="activity_radio_1_1" value="false" />
+						<label for="activity_radio_1_1">a) a baby duck</label>
+
+						<input type="radio" name="activity_radio_1" id="activity_radio_1_2" value="false" />
+						<label for="activity_radio_1_2">b) a chick</label>
+
+						<input type="radio" name="activity_radio_1" id="activity_radio_1_3" value="true" />
+						<label for="activity_radio_1_3">c) a duckling</label>
+
+						<input type="radio" name="activity_radio_1" id="activity_radio_1_4" value="false" />
+						<label for="activity_radio_1_4">d) a duck baby</label>
+					</fieldset>
+				</div>
+			</div>
+			<div id="activity3" class="ui-body pgactivity">
+				<div id="activity_section3" class="activity_sectiontext" style="text-align:center;margin-top:-1em">
+					<!--<h1><span style="display:inline-block">Activity For The Book<br/>ME TOO</span></h1>-->
+					<h2><span class="buttetsandnumbering" id="activcontent3"></span></h2>
+					<div style="display:inline-block"><img id="check_activity_3" style="display:none" src="images/common/CorrectAnswerSmall.png"></div>
+					<fieldset id="optionradios2">
+						<input type="radio" name="activity_radio_2" id="activity_radio_2_1" value="true" />
+						<label for="activity_radio_2_1">a) a chick</label>
+
+						<input type="radio" name="activity_radio_2" id="activity_radio_2_2" value="false" />
+						<label for="activity_radio_2_2">b) a chikku</label>
+
+						<input type="radio" name="activity_radio_2" id="activity_radio_2_3" value="false" />
+						<label for="activity_radio_2_3">c) a baby hen</label>
+
+						<input type="radio" name="activity_radio_2" id="activity_radio_2_4" value="false" />
+						<label for="activity_radio_2_4">d) a cook</label>
+					</fieldset>
+				</div>
+			</div>
+			<div id="activity4" class="ui-body pgactivity">
+				<div id="activity_section4" class="activity_sectiontext" style="text-align:center;margin-top:-1em">
+					<!--<h1><span>Activity For The Book<br/>ME TOO</span></h1>-->
+					<h2><span class="buttetsandnumbering" id="activcontent4"></span></h2>
+					<div style="display:inline-block"><img id="check_activity_4" style="display:none" src="images/common/CorrectAnswerSmall.png"></div>
+					<fieldset id="optionradios3">
+						<input type="radio" name="activity_radio_3" id="activity_radio_3_1" value="false" />
+						<label for="activity_radio_3_1">a) the chick</label>
+
+						<input type="radio" name="activity_radio_3" id="activity_radio_3_2" value="true" />
+						<label for="activity_radio_3_2">b) the duckling</label>
+
+						<input type="radio" name="activity_radio_3" id="activity_radio_3_3" value="false" />
+						<label for="activity_radio_3_3">c) the baby hen</label>
+
+						<input type="radio" name="activity_radio_3" id="activity_radio_3_4" value="false" />
+						<label for="activity_radio_3_4">d) the chikku</label>
+					</fieldset>
+					
+				</div>
+			</div>
+			<div id="activity5" class="ui-body pgactivity">
+				<div id="activity_section5" class="activity_sectiontext" style="text-align:center;margin-top:-1em">
+					<!--<h1><span>Activity For The Book<br/>ME TOO</span></h1>-->
+					<h2><span class="buttetsandnumbering" id="activcontent5"></span></h2>
+					<div style="display:inline-block"><img id="check_activity_5" style="display:none" src="images/common/CorrectAnswerSmall.png"></div>
+					<fieldset id="optionradios4">
+						<input type="radio" name="activity_radio_4" id="activity_radio_4_1" value="true" />
+						<label for="activity_radio_4_1">a) follows the duckling.</label>
+
+						<input type="radio" name="activity_radio_4" id="activity_radio_4_2" value="false" />
+						<label for="activity_radio_4_2">b) leads the duckling.</label>
+
+						<input type="radio" name="activity_radio_4" id="activity_radio_4_3" value="false" />
+						<label for="activity_radio_4_3">c) goes to the pond for swimming.</label>
+						 <input type="radio" name="activity_radio_4" id="activity_radio_4_4" value="false" />
+						<label for="activity_radio_4_4">d) sleeps in the egg.</label>
+					</fieldset>
+				</div>
+			</div>
+			<div id="activity6" class="ui-body pgactivity">
+				<div id="activity_section6" class="activity_sectiontext" style="text-align:center;margin-top:-1em">
+					<!--<h1><span>Activity For The Book<br/>ME TOO</span></h1>-->
+					<h2><span class="buttetsandnumbering" id="activcontent6"></span></h2>
+					<div style="display:inline-block"><img id="check_activity_6" style="display:none" src="images/common/CorrectAnswerSmall.png"></div>
+					<fieldset id="optionradios5">
+						<input type="radio" name="activity_radio_5" id="activity_radio_5_1" value="false" />
+						<label for="activity_radio_5_1">a) liked to drown.</label>
+
+						<input type="radio" name="activity_radio_5" id="activity_radio_5_2" value="false" />
+						<label for="activity_radio_5_2">b) wanted to see if the duckling would help him.</label>
+
+						<input type="radio" name="activity_radio_5" id="activity_radio_5_3" value="true" />
+						<label for="activity_radio_5_3">c) did not know how to swim.</label>
+
+						<input type="radio" name="activity_radio_5" id="activity_radio_5_4" value="false" />
+						<label for="activity_radio_5_4">d) wanted to drink more water.</label>
+
+					</fieldset>
+				</div>
+			</div>
+
+			<div id="activity7" class="ui-body pgactivity">
+				<div id="activity_section7" class="activity_sectiontext" style="text-align:center;margin-top:-1em">
+					<!--<h1><span>Activity For The Book<br/>ME TOO</span></h1>-->
+					<h2><span class="buttetsandnumbering" id="activcontent7"></span></h2>
+					<div style="display:inline-block"><img id="check_activity_7" style="display:none" src="images/common/CorrectAnswerSmall.png"></div>
+					<fieldset id="optionradios6">
+						<input type="radio" name="activity_radio_6" id="activity_radio_6_1" value="false" />
+						<label for="activity_radio_6_1">a) the fish</label>
+
+						<input type="radio" name="activity_radio_6" id="activity_radio_6_2" value="false" />
+						<label for="activity_radio_6_2">b) the fisherman</label>
+
+						<input type="radio" name="activity_radio_6" id="activity_radio_6_3" value="false" />
+						<label for="activity_radio_6_3">c) the tortoise</label>
+
+						<input type="radio" name="activity_radio_6" id="activity_radio_6_4" value="true" />
+						<label for="activity_radio_6_4">d) the duckling</label>
+					</fieldset>
+				</div>
+			</div>
+
+			<div id="activity8" class="ui-body pgactivity">
+				<div id="activity_section8" class="activity_sectiontext" style="text-align:center;margin-top:-1em">
+					<!--<h1><span>Activity For The Book<br/>ME TOO</span></h1>-->
+					<h2><span class="buttetsandnumbering" id="activcontent8"></span></h2>
+					<div style="display:inline-block"><img id="check_activity_8" style="display:none" src="images/common/CorrectAnswerSmall.png"></div>
+					<fieldset id="optionradios7">
+						<input type="radio" name="activity_radio_7" id="activity_radio_7_1" value="false" />
+						<label for="activity_radio_7_1">a) Yes</label>
+
+						<input type="radio" name="activity_radio_7" id="activity_radio_7_2" value="true" />
+						<label for="activity_radio_7_2">b) No</label>
+					</fieldset>
+				</div> 
+
+			</div>
+		</div>
+        </div>
+
+
+
+
+        {
+            isIntroduction: true,
+            content: (
+                <div id="activity1" className="ui-body pgactivity" style={{ paddingTop: '40px', textAlign: 'center' }}>
+                    <div id="activity_section1" className="activity_sectiontext">
+                        <h1><span>Activity For The Book<br/><br/>ME TOO</span></h1>
+                    </div>
+                </div>
+            ),
+            audioSrc: '/audio/activity_section1.mp3',
+        },
+        if (questions[currentQuestion].syncData) {
+
+            {
+            isIntroduction: true,
+            content: (
+                <div>
+                    <h2>Welcome to the Duckling Quiz!</h2>
+                    <p>You'll be asked a series of questions about ducks and chicks. Listen carefully to the audio and choose the correct answers. Good luck!</p>
+                    <button onClick={() => setCurrentQuestion(currentQuestion + 1)}>Start Quiz</button>
+                </div>
+            ),
+        },
