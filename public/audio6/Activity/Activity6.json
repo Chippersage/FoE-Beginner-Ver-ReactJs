@@ -1,0 +1,126 @@
+{
+"questions": [
+{
+"questionText": "1. Sea water tastes salty because?",
+"correctAnswer": "a",
+"options": [
+{ "value": "a", "label": "A) there is salt in it." },
+{ "value": "b", "label": "B) there is sugar in it." },
+{ "value": "c", "label": "C) there is acid in it." },
+{ "value": "d", "label": "D) God puts salt everyday to sea water." }
+],
+"syncData" : [
+{ "end": "0.45", "start": "0.05", "text": "1. Sea " },
+{ "end": "0.85", "start": "0.45", "text": " water" },
+{ "end": "1.35", "start": "0.85", "text": " tastes" },
+{ "end": "1.75", "start": "1.35", "text": " salty" },
+{ "end": "2.20", "start": "1.75", "text": " because" }
+],
+"audioSrc": "/audio6/Activity/activity_section2.ogg",
+"correctAudioSrc": "/audio6/Activity/youarecorrect.ogg",
+"incorrectAudioSrc": "/audio6/Activity/activity_section2_answer1.ogg"
+},
+{
+"questionText": "2. Why is chocolate sweet? because",
+"correctAnswer": "b",
+"options": [
+{ "value": "a", "label": "A) there is salt in it." },
+{ "value": "b", "label": "B) there is sugar in it" },
+{ "value": "c", "label": "C) there is acid in it." },
+{ "value": "d", "label": "D) I'm very sweet, so when I eat, it becomes sweet" }
+],
+"syncData" : [
+{ "end": "0.50", "start": "0.05", "text": "2. Why" },
+{ "end": "0.75", "start": "0.50", "text": " is" },
+{ "end": "1.30", "start": "0.75", "text": " chocolate" },
+{ "end": "2.45", "start": "1.30", "text": " sweet?" },
+{ "end": "3.75", "start": "2.45", "text": " because" }
+],
+"audioSrc": "/audio6/Activity/activity_section3.ogg",
+"correctAudioSrc": "/audio6/Activity/good.ogg",
+"incorrectAudioSrc": "/audio6/Activity/activity_section3_answer2.ogg"
+},
+{
+"questionText": "3. The lime tastes sour because",
+"correctAnswer": "c",
+"options": [
+{ "value": "a", "label": "A) there is salt in it." },
+{ "value": "b", "label": "B) there is sugar in it." },
+{ "value": "c", "label": "C) there is acid in it." },
+{ "value": "d", "label": "D) I do not like it." }
+],
+"syncData" : [
+{ "end": "0.45", "start": "0.05", "text": "3.The" },
+{ "end": "0.90", "start": "0.45", "text": " lime" },
+{ "end": "1.30", "start": "0.90", "text": " tastes" },
+{ "end": "1.75", "start": "1.30", "text": " sour" },
+{ "end": "2.25", "start": "1.75", "text": " because" }
+],
+"audioSrc": "/audio6/Activity/activity_section4.ogg",
+"correctAudioSrc": "/audio6/Activity/youarecorrect.ogg",
+"incorrectAudioSrc": "/audio6/Activity/activity_section4_answer1.ogg"
+},
+{
+"questionText": "4. How do your tears taste?",
+"correctAnswer": "b",
+"options": [
+    { "value": "a", "label": "A) Sweet" },
+    { "value": "b", "label": "B) Salty" },
+    { "value": "c", "label": "C) Sour" },
+    { "value": "d", "label": "D) Bitter" }
+    ],
+    "syncData" : [
+{ "end": "0.40", "start": "0.05", "text": "4. How" },
+{ "end": "0.60", "start": "0.40", "text": " do" },
+{ "end": "0.90", "start": "0.60", "text": " your" },
+{ "end": "1.25", "start": "0.90", "text": " tears" },
+{ "end": "1.85", "start": "1.25", "text": " taste?" }
+],
+"audioSrc": "/audio6/Activity/activity_section5.ogg",
+"correctAudioSrc": "/audio6/Activity/verygood.ogg",
+"incorrectAudioSrc": "/audio6/Activity/activity_section5_answer1.ogg"
+},
+{
+"questionText": "5. How do raw mangoes taste?",
+"correctAnswer": "c",
+"options": [
+{ "value": "a", "label": "A) very sweet" },
+{ "value": "b", "label": "B) very salty" },
+{ "value": "c", "label": "C) very sour" },
+{ "value": "d", "label": "D) very bitter" }
+],
+"syncData" : [
+{ "end": "0.40", "start": "0.05", "text": "5. How" },
+{ "end": "0.60", "start": "0.40", "text": " do" },
+{ "end": "0.90", "start": "0.60", "text": " raw" },
+{ "end": "1.30", "start": "0.90", "text": " mangoes" },
+{ "end": "1.90", "start": "1.30", "text": " taste?" }
+],
+"audioSrc": "/audio6/Activity/activity_section6.ogg",
+"correctAudioSrc": "/audio6/Activity/youarecorrect.ogg",
+"incorrectAudioSrc": "/audio6/Activity/activity_section6_answer1.ogg"
+},
+{
+"questionText": "6. What is the taste of green chillies?",
+"correctAnswer": "d",
+"options": [
+{ "value": "a", "label": "A) Sugar" },
+{ "value": "b", "label": "B) Salt" },
+{ "value": "c", "label": "C) Acid" },
+{ "value": "d", "label": "D) Hot" }
+],
+"syncData" : [
+{ "end": "0.40", "start": "0.05", "text": "6. What" },
+{ "end": "0.60", "start": "0.40", "text": " is" },
+{ "end": "0.85", "start": "0.60", "text": " the" },
+{ "end": "1.20", "start": "0.85", "text": " taste" },
+{ "end": "1.45", "start": "1.20", "text": " of" },
+{ "end": "1.80", "start": "1.45", "text": " green" },
+{ "end": "2.25", "start": "1.80", "text": " chillies?" }
+],
+"audioSrc": "/audio6/Activity/activity_section7.ogg",
+"correctAudioSrc": "/audio6/Activity/youaresuperb.ogg",
+"incorrectAudioSrc": "/audio6/Activity/activity_section7_answer2.ogg"
+}
+]
+}

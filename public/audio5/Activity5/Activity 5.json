@@ -1,0 +1,99 @@
+    {
+    "questions": [
+    {
+    "questionText": "1. If the bus wheels are not round then?",
+    "correctAnswer": "a",
+    "options": [
+    { "value": "a", "label": "A) the bus will not move." },
+    { "value": "b", "label": "B) the bus does not look good." },
+    { "value": "c", "label": "C) the bus moves very fast." },
+    { "value": "d", "label": "D) None of the above" }
+    ],
+    "syncData": [
+    { "end": "0.35", "start": "0.05", "text": "1. If " },
+    { "end": "0.65", "start": "0.35", "text": " the" },
+    { "end": "1.00", "start": "0.65", "text": " bus" },
+    { "end": "1.45", "start": "1.00", "text": " wheels" },
+    { "end": "1.70", "start": "1.45", "text": " are" },
+    { "end": "2.00", "start": "1.70", "text": " not" },
+    { "end": "2.50", "start": "2.00", "text": " round," },
+    { "end": "3.10", "start": "2.50", "text": " then" }
+    ],
+    "audioSrc": "/audio5/Activity5/activity_section2.ogg",
+    "correctAudioSrc": "/audio5/Activity5/youarecorrect.ogg",
+    "incorrectAudioSrc": "/audio5/Activity5/activity_section2_answer1.ogg"
+    },
+    {
+    "questionText": "2. What is the shape of your mother's bangles?",
+    "correctAnswer": "a",
+    "options": [
+    { "value": "a", "label": "A) A circle" },
+    { "value": "b", "label": "B) A rectangle" },
+    { "value": "c", "label": "C) A triangle"},
+    { "value": "d", "label": "D) A square" }
+    ],
+    "syncData": [
+    { "end": "0.35", "start": "0.05", "text": "2. What" },
+    { "end": "0.65", "start": "0.35", "text": " is" },
+    { "end": "0.95", "start": "0.65", "text": " the" },
+    { "end": "1.35", "start": "0.95", "text": " shape" },
+    { "end": "1.65", "start": "1.35", "text": " of" },
+    { "end": "2.05", "start": "1.65", "text": " your" },
+    { "end": "2.50", "start": "2.05", "text": " mother's" },
+    { "end": "3.20", "start": "2.50", "text": " bangles?" }
+    ],
+    "audioSrc": "/audio5/Activity5/activity_section3.ogg",
+    "correctAudioSrc": "/audio5/Activity5/youarecorrect.ogg",
+    "incorrectAudioSrc": "/audio5/Activity5/activity_section3_answer1.ogg"
+    },
+    {
+    "questionText": "3. Look into a mirror- What is the shape of your eyeballs?",
+    "correctAnswer": "c",
+    "options": [
+    { "value": "a", "label": "A) A Triangle" },
+    { "value": "b", "label": "B) A Rectangle" },
+    { "value": "c", "label": "C) A Circle"},
+    { "value": "d", "label": "D) A Square" }
+    ],
+    "syncData": [
+    { "end": "0.55", "start": "0.05", "text": "3.Look" },
+    { "end": "0.90", "start": "0.55", "text": " into" },
+    { "end": "1.20", "start": "0.90", "text": " a" },
+    { "end": "1.60", "start": "1.20", "text": " mirror-" },
+    { "end": "2.00", "start": "1.60", "text": " What" },
+    { "end": "2.30", "start": "2.00", "text": " is" },
+    { "end": "2.55", "start": "2.30", "text": " the" },
+    { "end": "2.90", "start": "2.55", "text": " shape" },
+    { "end": "3.20", "start": "2.90", "text": " of" },
+    { "end": "3.65", "start": "3.20", "text": " your" },
+    { "end": "4.50", "start": "3.65", "text": " eyeballs?" }
+    ],
+    "audioSrc": "/audio5/Activity5/activity_section4.ogg",
+    "correctAudioSrc": "/audio5/Activity5/youarecorrect.ogg",
+    "incorrectAudioSrc": "/audio5/Activity5/activity_section4_answer2.ogg"
+    },
+    {
+    "questionText": "4. What is the shape of the number ZERO?", 
+    "correctAnswer": "c",
+    "options": [
+    { "value": "a", "label": "A) A Triangle" },
+    { "value": "b", "label": "B) A Rectangle" },
+    { "value": "c", "label": "C) A Circle"},
+    { "value": "d", "label": "D) A Square" }
+    ],
+    "syncData": [
+    { "end": "0.45", "start": "0.05", "text": "4. What" },
+    { "end": "0.75", "start": "0.45", "text": " is" },
+    { "end": "1.05", "start": "0.75", "text": " the" },
+    { "end": "1.45", "start": "1.05", "text": " shape" },
+    { "end": "1.75", "start": "1.45", "text": " of" },
+    { "end": "2.05", "start": "1.75", "text": " the" },
+    { "end": "2.50", "start": "2.05", "text": " number" },
+    { "end": "3.20", "start": "2.50", "text": " ZERO?" }
+    ],
+    "audioSrc": "/audio5/Activity5/activity_section5.ogg",
+    "correctAudioSrc": "/audio5/Activity5/youarecorrect.ogg",
+    "incorrectAudioSrc": "/audio5/Activity5/activity_section5_answer2.ogg"
+    }
+    ]
+    }
