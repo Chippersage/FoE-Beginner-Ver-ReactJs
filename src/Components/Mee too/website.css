@@ -1,0 +1,161 @@
+
+/* Base Styles */
+.app {
+  text-align: left;
+  margin: 0;
+  padding: 1%;
+  display: inline-block;
+  flex-direction: column;
+  
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+/* .header {
+  background-color: #282c34;
+  padding: 10px;
+  color: white;
+  font-size: 1.2rem; 
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+} */
+
+/* Image Container Styles */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 60vh; /* Adjusted max height for better scaling */
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added a slight shadow for a cleaner look */
+}
+
+/* Control Panel Styles */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: #07c7e0;
+  border-top: 1px solid #dc1212;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.controls button {
+  background: aliceblue;
+  border: none;
+  padding: 10px; /* Added padding for better interaction */
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px; /* Added slight border-radius for smoother buttons */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.controls button:hover {
+  background-color: #e0f7fa; /* Light background on hover for feedback */
+}
+
+.controls img {
+  max-width: 40px;
+  height: auto;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  /* .header {
+    font-size: 1rem; 
+  } */
+
+  .controls button {
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .image-container img {
+    max-height: 50vh; /* Adjusted for smaller screens */
+  }
+}
+
+
+/* Footer styles */
+footer {
+  padding: 10px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+footer span {
+  font-size: 0.75rem;
+  color: #aaaaaa;
+}
+
+/* Media Queries */
+ @media (max-width: 768px) {
+ /* .header {
+    font-size: 0.9rem;
+    padding: 8px;
+  } */
+
+  .controls {
+    padding: 8px 2%;
+  }
+
+  .controls img {
+    max-width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls img {
+    max-width: 25px;
+  }
+}
+/* Footer.css */
+
+.footer-container {
+  margin-top: 10px;
+  padding: 5px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.75rem;
+  color: black;
+  text-shadow: none;
+}
+
+.footer-text b {
+  font-weight: bold;
+}
+
+.footer-link {
+  color: blue;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* Media query for devices with a max-width of 600px (mobile devices) */
+@media (max-width: 600px) {
+  .footer-text {
+    font-size: 0.65rem; /* Smaller font size on mobile */
+  }
+
+  .footer-link {
+    margin-left: 5px; /* Reduce margin for mobile */
+  }
+}

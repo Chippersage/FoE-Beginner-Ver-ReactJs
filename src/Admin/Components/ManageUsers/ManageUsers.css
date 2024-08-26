@@ -1,0 +1,205 @@
+.manage-users-container {
+  display: flex;
+}
+
+.manage-users-form-container {
+  flex: 1;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.manage-users-form-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.manage-users-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-users-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.manage-users-form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.manage-users-form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.manage-users-register-button {
+  padding: 10px 15px;
+  background-color: rgb(14, 158, 14);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.manage-users-register-button:hover {
+  background-color: rgb(14, 158, 14);
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .manage-users-container {
+    display: flex;
+  }
+  
+  .manage-users-form-container {
+    flex: 1;
+    padding: 20px;
+    margin-top: 80px;
+  }
+  
+  .manage-users-form-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    width: 294px;
+    margin-left: 67px;
+  }
+  
+  .manage-users-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left: 65px;
+  }
+  
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .manage-users-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .manage-users-form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .manage-users-form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .manage-users-register-button {
+    padding: 10px 15px;
+    background-color: rgb(14, 158, 14);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .manage-users-register-button:hover {
+    background-color: rgb(14, 158, 14);
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .manage-users-container {
+    display: flex;
+  }
+  
+  .manage-users-form-container {
+    flex: 1;
+    padding: 20px;
+    margin-top: 80px;
+  }
+  
+  .manage-users-form-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-left: 103px;
+  }
+  
+  .manage-users-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left: 75px;
+  }
+  
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .manage-users-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .manage-users-form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .manage-users-form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .manage-users-register-button {
+    padding: 10px 15px;
+    background-color: rgb(14, 158, 14);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .manage-users-register-button:hover {
+    background-color: rgb(14, 158, 14);
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}

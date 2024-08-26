@@ -6,7 +6,7 @@
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex; 
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -16,6 +16,7 @@
   font-size: 1.5em;
   color: #333;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Options styling */
@@ -80,9 +81,10 @@
 /* Footer with buttons */
 .score-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
+  margin-top: 20px;
 }
 
 .score-footer button {
@@ -94,11 +96,14 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
 }
 
 .score-footer button img {
-  width: 24px; /* Set a fixed width for the icons */
-  height: auto; /* Maintain aspect ratio */
+  width: 24px;
+  height: auto;
 }
 
 .score-footer button:hover {
@@ -138,6 +143,7 @@
   transform: scale(1.1);
 }
 
+/* Score boxes */
 .scrorecorrectbox {
   background-color: #d4edda;
   padding: 8px;
@@ -194,72 +200,68 @@ strong.question-label {
   background-color: #d4edda;
 }
 
-.back-to-home-btn {
-  background-color: #47b0bd;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.back-to-home-btn:hover {
-  background-color: #3a8d9a;
-}
-
 /* Responsive Design */
-@media (max-width: 400px) {
+@media (max-width: 768px) {
   .activity-container {
-      padding: 5px;
+    padding: 10px;
+    max-width: 90%;
   }
 
   .option-container {
-      padding: 8px;
-      font-size: 1em;
+    padding: 8px;
+    font-size: 1em;
   }
 
   .score-footer button {
-      padding: 8px 15px;
-      font-size: 0.9em;
+    padding: 8px 15px;
+    font-size: 0.9em;
   }
 
   .score-footer button img {
-      width: 20px; /* Smaller icons for small screens */
+    width: 20px;
   }
 
   .congratulations h3 {
-      font-size: 1.5em;
+    font-size: 1.5em;
   }
 
   .congratulations img.trophy-image {
-      width: 80px;
+    width: 80px;
   }
 
   .start-quiz-image {
-      width: 80px;
+    width: 80px;
   }
 }
 
-@media (max-width: 768px) {
-  .header {
-    flex-direction: row;
+@media (max-width: 400px) {
+  .activity-container {
+    padding: 5px;
   }
 
-  .header-text {
-    margin: 10px 0;
+  .option-container {
+    padding: 8px;
+    font-size: 0.9em;
   }
 
-  .left-logo {
-    width: 20%; /* Adjust logo size for smaller screens */
-  }
-
-  .header h1 {
-    font-size: 3vw; 
+  .score-footer button {
+    padding: 6px 12px;
+    font-size: 0.8em;
   }
 
   .score-footer button img {
-      width: 22px; /* Adjust icon size for medium screens */
+    width: 18px;
+  }
+
+  .congratulations h3 {
+    font-size: 1.2em;
+  }
+
+  .congratulations img.trophy-image {
+    width: 60px;
+  }
+
+  .start-quiz-image {
+    width: 60px;
   }
 }

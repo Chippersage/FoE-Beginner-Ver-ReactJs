@@ -9,7 +9,6 @@
   border-radius: 8px;
   background-color: #f9f9f9;
   position: relative; /* Necessary for slide number positioning */
-  
   max-width: 800px; /* Reduce max-width for smaller screens */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for a cleaner look */
 }
@@ -48,6 +47,7 @@
 /* Highlighted Text Styling */
 .highlighted {
   background-color: yellow;
+  font-weight: bold;
 }
 
 /* Slide Number Styling */
@@ -60,28 +60,63 @@
   color: #555;
 }
 
-/* Media Queries for Smaller Screens */
-@media (max-width: 768px) {
-  .lesson-container {
-    padding: 5px;
-    margin: 5px;
-  }
-
-  .lesson-image {
-    max-width: 80%; /* Slightly reduce max-width for smaller screens */
-  }
-
-  .text-content {
-    font-size: 1rem; /* Adjust font size for better readability on smaller screens */
-  }
-
-  .slide-number {
-    font-size: 0.9rem;
-    bottom: 5px;
-    right: 5px;
-  }
+.user-circle {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 5px auto;
 }
-.highlighted {
-  background-color: yellow;
-  font-weight: bold;
+
+.progress-circle {
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke: #4a90e2;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease;
+}
+
+.user-image {
+  width: 5px;
+  height: 5px;
+  border-radius: 5%;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.score-display {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  animation: pop-in 0.3s ease;
+}
+
+@keyframes pop-in {
+  from {
+      transform: scale(0.5) translateX(-50%);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1) translateX(-50%);
+      opacity: 1;
+  }
 }
