@@ -2,8 +2,8 @@
 import React from 'react';
 import { ScoreProvider } from '../Context/ScoreContext'; // Corrected import
 import MeeTooActivity8 from '../Mee too/MeeTooActivity8';
-import TalkMeNowActivity5 from '../TalkMeNow6/TalkMeNowActivity5';
 import TalkMeNowActivity6 from '../TalkMeNow6/TalkMeNowActivity6';
+import TalkMeNowActivity5 from '../TellMeNow5/TalkMeNowActivity5';
 import ActivitiesHeader from './ActivitiesHeader';
 
 const App = () => {

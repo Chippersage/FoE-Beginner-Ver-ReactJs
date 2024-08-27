@@ -1,70 +1,64 @@
-
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import Header from '../Header/Header';
+
 import '../../../src/Styles/website.css';
-import AudioPlayer from './AudioPlayer';
-import LessonContent8 from './LessonContent8';
-import MeeTooActivity8 from './MeeTooActivity8';
-// import Header from './Header';
+import AudioPlayer from '../Mee too/AudioPlayer';
+import LessonContent7 from './LessonContent7';
+import TheBoatActivity7 from './TheBoatActivity7';
 
 function App() {
-  
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentAudioIndex, setCurrentAudioIndex] = useState(0);
   const [audioSrc, setAudioSrc] = useState('');
   const [isMuted, setIsMuted] = useState(false);
   const [currentView, setCurrentView] = useState('lesson');
   const audioRef = useRef(null);
-  const navigate = useNavigate(); // Navigation hook
+  const navigate = useNavigate();
 
   // List of audio files
   const audioFiles = useMemo(() => [
-    'section1.mp3', 'section2.mp3', 'section3.mp3', 'section4.mp3',
-    'section5.mp3', 'section6.mp3', 'section7.mp3', 'section8.mp3',
-    'section9.mp3', 'section10.mp3', 'section11.mp3', 'section12.mp3',
-    'section13.mp3'
+    'section1.ogg', 'section2.ogg', 'section3.ogg', 'section4.ogg',
+    'section5.ogg', 'section6.ogg', 'section7.ogg', 'section8.ogg',
+    'section9.ogg', 'section10.ogg', 'section11.ogg', 'section12.ogg',
+    'section13.ogg', 'section14.ogg', 'section15.ogg', 'section16.ogg',
+    'section17.ogg', 'section18.ogg', 'section19.ogg'
   ], []);
 
-  
   useEffect(() => {
-    setAudioSrc(`${process.env.PUBLIC_URL}/audio/${audioFiles[currentAudioIndex]}`);
+    setAudioSrc(`${process.env.PUBLIC_URL}/audio7/Lesson7/${audioFiles[currentAudioIndex]}`);
   }, [currentAudioIndex, audioFiles]);
 
-  
   const handleStart = () => {
-      setIsPlaying(true);
-    
+    setIsPlaying(true);
   };
-  const handlePause = () => setIsPlaying((prevIsPlaying) => !prevIsPlaying); // Toggle play/pause
 
-
-  
+  const handlePause = () => setIsPlaying((prevIsPlaying) => !prevIsPlaying);
 
   const handleRepeat = () => {
     setIsPlaying(false);
     setTimeout(() => setIsPlaying(true), 100);
   };
+
   const handleNext = () => {
     setIsPlaying(false);
     setCurrentAudioIndex((prevIndex) => {
-      const nextIndex = (prevIndex + 1) % audioFiles.length;
-      if (nextIndex === 0) {
-        setCurrentView('activity');
+      const nextIndex = prevIndex + 1;
+      if (nextIndex >= audioFiles.length) {
+        setCurrentView('activity 7');
+        return prevIndex;
       }
       return nextIndex;
     });
     setTimeout(() => setIsPlaying(true), 100);
   };
 
-
   const handlePrev = () => {
     setIsPlaying(false);
-    setCurrentAudioIndex(prevIndex => (prevIndex - 1 + audioFiles.length) % audioFiles.length);
+    setCurrentAudioIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : 0));
     setTimeout(() => setIsPlaying(true), 100);
   };
-  const handleMute = () => setIsMuted((prevIsMuted) => !prevIsMuted); // Toggle mute/unmute
-  
+
+  const handleMute = () => setIsMuted((prevIsMuted) => !prevIsMuted);
 
   const handleHome = () => {
     setIsPlaying(false);
@@ -74,10 +68,8 @@ function App() {
 
   const handleActivity = () => {
     setCurrentView('activity');
-  
   };
 
-  // Effect for audio playback control
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
@@ -96,10 +88,9 @@ function App() {
     const resetTimer = () => {
       clearTimeout(inactivityTimer);
       inactivityTimer = setTimeout(() => {
-        // Logout or redirect to a different page after inactivity
         alert('You have been logged out due to inactivity.');
-        navigate('/dashboard'); // Replace with your login or logout path
-      }, 600000); // 30 seconds of inactivity
+        navigate('/dashboard');
+      }, 600000); // 10 minutes of inactivity
     };
 
     window.addEventListener('mousemove', resetTimer);
@@ -114,13 +105,11 @@ function App() {
     };
   }, [navigate]);
 
-  
   return (
     <div className="app">
-      {/* {<Header /> } */}
       {currentView === 'lesson' ? (
         <>
-          <LessonContent8 currentLessonIndex={currentAudioIndex} isPlaying={isPlaying} />
+          <LessonContent7 currentLessonIndex={currentAudioIndex} isPlaying={isPlaying} />
           <div className="controls">
             <button onClick={handleHome}>
               <img src={`${process.env.PUBLIC_URL}/audio/common/home.png`} alt="Home" />
@@ -160,22 +149,18 @@ function App() {
               <img src={`${process.env.PUBLIC_URL}/audio/common/activity1.png`} alt="Activity" />
             </button>
           </div>
-          { <AudioPlayer isPlaying={isPlaying} audioSrc={audioSrc} isMuted={isMuted} ref={audioRef} /> }
+          <AudioPlayer isPlaying={isPlaying} audioSrc={audioSrc} isMuted={isMuted} ref={audioRef} />
         </>
       ) : (
-        <MeeTooActivity8 />
+        <TheBoatActivity7 />
       )}
       <footer className="footer-container">
         <span className="footer-text">
           <b>&copy; 2015-16, Chipper Sage Education Pvt. Ltd. All rights reserved.</b>
           <br />
-           <a href="https://www.thechippersage.com" target="_blank" rel="noopener noreferrer" className="footer-link">
-             www.thechippersage.com
-           </a>
-          {/* <span className="footer-link">Sitemap</span>
-          <span className="footer-link">Privacy Policy</span>
-          <span className="footer-link">Terms of Use</span>
-          <span className="footer-link">Contact Us</span> */}
+          <a href="https://www.thechippersage.com" target="_blank" rel="noopener noreferrer" className="footer-link">
+            www.thechippersage.com
+          </a>
         </span>
       </footer>
     </div>

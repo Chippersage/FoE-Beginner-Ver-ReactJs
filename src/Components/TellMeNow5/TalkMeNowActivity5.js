@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import '../../../src/Styles/ActivityPage.css';
 import { useAuth } from '../Context/AuthContext';
 import { db } from '../Firebase/FirebaseConfig'; // Adjust the path as needed
-import './TalkMeeNow6';
+import './TellMeNow5';
 
 const ActivityPage = () => {
     const { user } = useAuth();
@@ -26,8 +26,7 @@ const ActivityPage = () => {
     const currentDate = new Date();
 
     useEffect(() => {
-        console.log('Fetching activity data...');
-        fetch(`${process.env.PUBLIC_URL}/audio6/Activity/Activity6.json`)
+        fetch(`${process.env.PUBLIC_URL}/audio5/Activity5/Activity 5.json`)
             .then(response => response.json())
             .then(data => setQuestions(data.questions))
             .catch(error => console.error('Error fetching activity data:', error));
@@ -36,7 +35,7 @@ const ActivityPage = () => {
     useEffect(() => {
         const startDate = new Date();
         setStartTime(formatTime(startDate));
-        setCurrentActivity('Activity 6');
+        setCurrentActivity('Activity 5');
     
         const timer = setInterval(() => {
         const now = new Date();
@@ -89,15 +88,15 @@ const formatTime = (date) => {
         const startTimeCalculated = formatTime(new Date(endDate - parseDuration(duration)));
         
         const userData = {
-            passagename: 'Talk Me...Now',
-            passage: 'passage6',
+            passagename: 'TalkMeNowActivity5',
+            passage: 'passage5',
             correctAnswers: correctAnswerCount,
             totalQuestions: questions.length,
             startTime: startTimeCalculated,
             endTime: endTimeFormatted,
             date: formatDate(new Date),
             duration: duration,
-            activity: 'Fill in the blanks',
+            activity: 'Multiple Choices',
             questionScores: selectedAnswers.map(answer => ({
             questionNumber: answer.questionNumber,
             score: answer.isCorrect ? 1 : 0
@@ -105,42 +104,41 @@ const formatTime = (date) => {
             timestamp: Timestamp.now()
         };
         console.log('User Data to be saved:', userData); // Debugging line
-        
     try {
-      // Assuming user.uid exists
-    await db.collection('score').doc(user.uid).set(
+        // Assuming user.uid exists
+        await db.collection('score').doc(user.uid).set(
         {
-          scores: arrayUnion(userData) // Push new score data
+        scores: arrayUnion(userData) // Push new score data
         },
         { merge: true } // Merge with existing document
-    );
-    console.log('Score data saved successfully');
- // Update cumulative score
- const userCumulativeScoreDoc = db.collection('cumulative_scores').doc(user.uid);
- const userDoc = await userCumulativeScoreDoc.get();
- const currentCumulativeData = userDoc.exists ? userDoc.data() : { totalScore: 0 };
+        );
+        console.log('Score data saved successfully');
+        // Update cumulative score
+        const userCumulativeScoreDoc = db.collection('cumulative_scores').doc(user.uid);
+        const userDoc = await userCumulativeScoreDoc.get();
+        const currentCumulativeData = userDoc.exists ? userDoc.data() : { totalScore: 0 };
 
- // Calculate the new cumulative score
- const newTotalScore = currentCumulativeData.totalScore + score;
+        // Calculate the new cumulative score
+        const newTotalScore = currentCumulativeData.totalScore + score;
 
- // Update the cumulative score document
- await userCumulativeScoreDoc.set(
-     {
-         totalScore: newTotalScore
-     },
-     { merge: true } // Merge with existing document
- );
- console.log('Cumulative score data saved successfully');
-} catch (error) {
- console.error('Error saving score data:', error);
-}
-};
-    const handleAnswerSelection = (e) => {
+        // Update the cumulative score document
+        await userCumulativeScoreDoc.set(
+        {
+        totalScore: newTotalScore
+        },
+        { merge: true } // Merge with existing document
+        );
+        console.log('Cumulative score data saved successfully');
+        } catch (error) {
+        console.error('Error saving score data:', error);
+        }
+        };
+        const handleAnswerSelection = (e) => {
         const selectedValue = e.target.value;
         // const selectedLabel = e.target.nextSibling.innerText;
         if (selectedAnswer !== null) {
-            alert("You have already answered this question. To choose different answer, restart the quiz.");
-            return;
+        alert("You have already answered this question. To choose different answer, restart the quiz.");
+        return;
         }
 
         setSelectedAnswer(selectedValue);
@@ -217,7 +215,7 @@ const formatTime = (date) => {
     };
 
     const handleHome = () => {
-        window.location.href = './TalkMeeNow6'; // Adjust the path to your home page
+        window.location.href = './TellMeNow5'; // Adjust the path to your home page
     };
 
         const handleStartQuiz = () => {
@@ -305,6 +303,8 @@ const formatTime = (date) => {
             handleActivityCompletion();
         }
     },[quizCompleted,user]);
+
+
         return (
         <div className="activity-container">
         {currentQuestion === -1 ? (
@@ -409,7 +409,6 @@ const formatTime = (date) => {
         Home Page
         </button>
         </div>
-
         </>
         )}
         </>

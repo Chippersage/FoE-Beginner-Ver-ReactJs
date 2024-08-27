@@ -1,9 +1,9 @@
 
 import { arrayUnion, Timestamp } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
+import '../../../src/Styles/ActivityPage.css';
 import { useAuth } from '../Context/AuthContext';
 import { db } from '../Firebase/FirebaseConfig'; // Adjust the path as needed
-import './ActivityPage.css';
 import './MeeToo8';
 
 const ActivityPage = () => {

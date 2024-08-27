@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../Styles/Stages.css';
+import Stage7Img from '../Assets/images/boat.png';
 import Stage1Img from '../Assets/images/duck.png';
+import Stage6Img from '../Assets/images/flavor.png';
 import Stage5Img from '../Assets/images/idea.png';
 import Stage2Img from '../Assets/images/img2.jpg';
 import Stage3Img from '../Assets/images/img3.jpg';
@@ -36,11 +38,13 @@ function Stages() {
 
   const passages = {
     Stage1: [
-      { name: 'TalkMeNow5', img: Stage1Img },
+      { name: 'TellMeNow5', img: Stage3Img },
       { name: 'TalkMeNowActivity5', img: Stage4Img },
-      { name: 'TalkMeNow6', img: Stage2Img },
+      { name: 'TalkMeeNow6', img: Stage6Img },
       { name: 'TalkMeNowActivity6', img: Stage5Img},
-      { name: 'MeeToo8', img: Stage3Img },
+      { name: 'TheBoat7', img: Stage7Img },
+      { name: 'TheBoatActivity7', img: Stage5Img },
+      { name: 'MeeToo8', img: Stage1Img },
       { name: 'MeeTooActivity8', img: Stage4Img },
     ],
     Stage2: [
@@ -141,10 +145,12 @@ function Stages() {
 
     const navigationRoutes = {
       Stage1: {
-        MeeToo8: "/MeeToo8",
+        TellMeNow5: "/TellMeNow5",
         TalkMeNowActivity5 : "/TalkMeNowActivity5",
-        MeeToo8: "/MeeToo8",
+        TalkMeeNow6: "/TalkMeeNow6",
         TalkMeNowActivity6: "/TalkMeNowActivity6",
+        TheBoat7: "/TheBoat7",
+        TheBoatActivity7:"/TheBoatActivity7",
         MeeToo8: "/MeeToo8",
         MeeTooActivity8: "/MeeTooActivity8",
       },
@@ -186,11 +192,11 @@ function Stages() {
 
   const areAllActivitiesGreen = (stage) => {
     const stageActivities = passages[stage].map(passage => passage.name);
-    return stageActivities.every(activity => completedActivities[stage][activity] || (activity === 'website' && websiteStatus[stage]));
+    return stageActivities.every(activity => completedActivities[stage][activity] || (activity === 'MeeToo8' && websiteStatus[stage]));
   };
 
   const isGreen = (stage, activity) => {
-    if (activity === 'website' && websiteStatus[stage]) {
+    if (activity === 'MeeToo8' && websiteStatus[stage]) {
       return true;
     }
     return completedActivities[stage] && completedActivities[stage][activity];

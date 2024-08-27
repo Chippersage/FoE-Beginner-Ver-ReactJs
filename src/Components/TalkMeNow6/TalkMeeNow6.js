@@ -1,12 +1,11 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import Header from '../Header/Header';
+
 import '../../../src/Styles/website.css';
-import AudioPlayer from './AudioPlayer';
-import LessonContent8 from './LessonContent8';
-import MeeTooActivity8 from './MeeTooActivity8';
-// import Header from './Header';
+import AudioPlayer from '../Mee too/AudioPlayer';
+import LessonContent6 from './LessonContent6';
+import TalkMeNowActivity6 from './TalkMeNowActivity6';
 
 function App() {
   
@@ -20,15 +19,15 @@ function App() {
 
   // List of audio files
   const audioFiles = useMemo(() => [
-    'section1.mp3', 'section2.mp3', 'section3.mp3', 'section4.mp3',
-    'section5.mp3', 'section6.mp3', 'section7.mp3', 'section8.mp3',
-    'section9.mp3', 'section10.mp3', 'section11.mp3', 'section12.mp3',
-    'section13.mp3'
+    'section1.ogg', 'section2.ogg', 'section3.ogg', 'section4.ogg',
+    'section5.ogg', 'section6.ogg', 'section7.ogg', 'section8.ogg',
+    'section9.ogg', 'section10.ogg', 'section11.ogg', 'section12.ogg',
+    'section13.ogg'
   ], []);
 
   
   useEffect(() => {
-    setAudioSrc(`${process.env.PUBLIC_URL}/audio/${audioFiles[currentAudioIndex]}`);
+    setAudioSrc(`${process.env.PUBLIC_URL}/audio6/Lesson/${audioFiles[currentAudioIndex]}`);
   }, [currentAudioIndex, audioFiles]);
 
   
@@ -120,7 +119,7 @@ function App() {
       {/* {<Header /> } */}
       {currentView === 'lesson' ? (
         <>
-          <LessonContent8 currentLessonIndex={currentAudioIndex} isPlaying={isPlaying} />
+          <LessonContent6 currentLessonIndex={currentAudioIndex} isPlaying={isPlaying} />
           <div className="controls">
             <button onClick={handleHome}>
               <img src={`${process.env.PUBLIC_URL}/audio/common/home.png`} alt="Home" />
@@ -163,7 +162,7 @@ function App() {
           { <AudioPlayer isPlaying={isPlaying} audioSrc={audioSrc} isMuted={isMuted} ref={audioRef} /> }
         </>
       ) : (
-        <MeeTooActivity8 />
+        <TalkMeNowActivity6 />
       )}
       <footer className="footer-container">
         <span className="footer-text">

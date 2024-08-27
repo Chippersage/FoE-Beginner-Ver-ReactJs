@@ -21,8 +21,12 @@ import LeaderBoard from "./Components/Cohort/LeaderBoard";
 import Activities from "./Components/Activities/Activities";
 import MeeToo8 from "./Components/Mee too/MeeToo8";
 import MeeTooActivity8 from "./Components/Mee too/MeeTooActivity8";
-import TalkMeNowActivity5 from "./Components/TalkMeNow6/TalkMeNowActivity5";
+import TalkMeeNow6 from "./Components/TalkMeNow6/TalkMeeNow6";
 import TalkMeNowActivity6 from "./Components/TalkMeNow6/TalkMeNowActivity6";
+import TalkMeNowActivity5 from "./Components/TellMeNow5/TalkMeNowActivity5";
+import TellMeNow5 from "./Components/TellMeNow5/TellMeNow5";
+import TheBoat7 from "./Components/TheBoat7/TheBoat7";
+import TheBoatActivity7 from "./Components/TheBoat7/TheBoatActivity7";
 
 const queryClient = new QueryClient();
 
@@ -46,9 +50,14 @@ function App() {
         <Route path="/scores" element={<Score />} />
         <Route path="/leaderboard" element={<LeaderBoard />} />
 
-        <Route path="/MeeToo8" element={<MeeToo8 />} />
+
+        <Route path="/TellMeNow5" element={<TellMeNow5 />} />
         <Route path="/TalkMeNowActivity5" element={<TalkMeNowActivity5 />} />
+        <Route path="/TalkMeeNow6" element={<TalkMeeNow6 />} />
         <Route path="/TalkMeNowActivity6" element={<TalkMeNowActivity6 />} />
+        <Route path="/TheBoat7" element={<TheBoat7 />} />
+        <Route path="/TheBoatActivity7" element={<TheBoatActivity7 />} />
+        <Route path="/MeeToo8" element={<MeeToo8 />} />
         <Route path="/MeeTooActivity8" element={<MeeTooActivity8/>}/>
 
         <Route path="/Activities" element={<Activities />} />
