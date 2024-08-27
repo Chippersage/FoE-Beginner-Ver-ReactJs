@@ -1,0 +1,247 @@
+        {
+        "questions": [
+        {
+        "questionText": "1. Who are the animals in the story?",
+        "correctAnswer": "c",
+        "options": [
+        { "value": "a", "label": "A) Frog, Cat, Chick and Bird." },
+        { "value": "b", "label": "B)  Cat, Bird, Ant and Owl." },
+        { "value": "c", "label": "C) Lady bird, Chick, Ant, Frog and Mouse." },
+        { "value": "d", "label": "D) Ant, Bat, Cat and Rat" }
+        ],
+        "syncData": [
+        { "end": "0.45", "start": "0.05", "text": "1. Who " },
+        { "end": "0.80", "start": "0.45", "text": " are" },
+        { "end": "1.10", "start": "0.80", "text": " the" },
+        { "end": "1.60", "start": "1.10", "text": " animals" },
+        { "end": "1.80", "start": "1.60", "text": " in" },
+        { "end": "2.10", "start": "1.80", "text": " the" },
+        { "end": "2.50", "start": "2.10", "text": " story?" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section2.ogg",
+        "correctAudioSrc": "/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section2_answer2.ogg"
+        },
+        {
+        "questionText": "2. What is the bus doing?",
+        "correctAnswer": "a",
+        "options": [
+        { "value": "a", "label": "A) out for a walk." },
+        { "value": "b", "label": "B) to swim." },
+        { "value": "c", "label": "C)  out to play." },
+        { "value": "d", "label": "D)  to a pond." }
+        ],
+        "syncData": [
+        { "end": "0.40", "start": "0.05", "text": "2. Where" },
+        { "end": "0.75", "start": "0.40", "text": " did" },
+        { "end": "1.10", "start": "0.75", "text": " all" },
+        { "end": "1.35", "start": "1.10", "text": " the" },
+        { "end": "2.15", "start": "1.35", "text": " friends" },
+        { "end": "2.50", "start": "2.15", "text": " go" },
+        { "end": "2.90", "start": "2.50", "text": " one" },
+        { "end": "3.40", "start": "2.90", "text": " day? " },
+        { "end": "3.90", "start": "3.40", "text": " They" },
+        { "end": "4.25", "start": "3.90", "text": " all" },
+        { "end": "4.75", "start": "4.25", "text": " went" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section3.ogg",
+        "correctAudioSrc": "/audio7/Activity 7/youaresuperb.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section3_answer1.ogg"
+        },
+        {
+        "questionText": "3. What is the bus doing?",
+        "correctAnswer": "b",
+        "options": [
+        { "value": "a", "label": "A)  the bank of a river." },
+        { "value": "b", "label": "B)  the bank of a stream."},
+        { "value": "c", "label": "C)  a pond."},
+        { "value": "d", "label": "D)  a lake."}
+        ],
+        "syncData": [
+        { "end": "0.45", "start": "0.05", "text": "3. Where" },
+        { "end": "0.90", "start": "0.45", "text": " did" },
+        { "end": "1.30", "start": "0.90", "text": " they" },
+        { "end": "1.75", "start": "1.30", "text": " reach?" },
+        { "end": "2.25", "start": "1.75", "text": " They" },
+        { "end": "2.75", "start": "2.25", "text": " reached" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section4.ogg",
+        "correctAudioSrc": "/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section4_answer1.ogg"
+        },
+        {
+        "questionText": "4. What is the bus doing?",
+        "correctAnswer": "c",
+        "options": [
+        { "value": "a", "label": "A) The rat" },
+        { "value": "b", "label": "B)  The chick"},
+        { "value": "c", "label": "C) The frog"},
+        { "value": "d", "label": "D) The ant"}
+        ],
+        "syncData": [
+        { "end": "0.40", "start": "0.05", "text": "4. Who" },
+        { "end": "0.70", "start": "0.40", "text": " swam" },
+        { "end": "1.00", "start": "0.70", "text": " in" },
+        { "end": "1.30", "start": "1.00", "text": " the" },
+        { "end": "1.95", "start": "1.30", "text": " stream?" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section5.ogg",
+        "correctAudioSrc": "/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section5_answer1.ogg"
+        },
+        {
+        "questionText": "5. What is the bus doing?",
+        "correctAnswer": "c",
+        "options": [
+        { "value": "a", "label": "A) they were too small." },
+        { "value": "b", "label": "B) they did not like to swim."},
+        { "value": "c", "label": "C)  they did not know how to swim."},
+        { "value": "d", "label": "D)  they did not want to get wet."}
+        ],
+        "syncData": [
+        { "end": "0.35", "start": "0.05", "text": "5. The" },
+        { "end": "0.75", "start": "0.35", "text": " other" },
+        { "end": "1.25", "start": "0.75", "text": " animals" },
+        { "end": "1.60", "start": "1.25", "text": " did" },
+        { "end": "2.00", "start": "1.60", "text": " not" },
+        { "end": "2.45", "start": "2.00", "text": " swim, " },
+        { "end": "3.00", "start": "2.45", "text": " because" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section6.ogg",
+        "correctAudioSrc": "/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section6_answer1.ogg"
+        },
+        {
+        "questionText": "6. What is the bus doing?",
+        "correctAnswer": "d",
+        "options": [
+        { "value": "a", "label": "A) also did not go to swim." },
+        { "value": "b", "label": "B) started to cry."},
+        { "value": "c", "label": "C)  swam happily."},
+        { "value": "d", "label": "D) laughed at them till he nearly choked."}
+        ],
+        "syncData": [
+        { "end": "0.40", "start": "0.05", "text": "6. What" },
+        { "end": "0.70", "start": "0.40", "text": " did" },
+        { "end": "0.95", "start": "0.70", "text": " the" },
+        { "end": "1.35", "start": "0.95", "text": " frog" },
+        { "end": "1.75", "start": "1.35", "text": " do" },
+        { "end": "2.25", "start": "1.75", "text": " then?" },
+        { "end": "2.55", "start": "2.25", "text": " The" },
+        { "end": "3.05", "start": "2.55", "text": " frog" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section7.ogg",
+        "correctAudioSrc": "/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section7_answer1.ogg"
+        },
+        {
+        "questionText": "7. What is the bus doing?",
+        "correctAnswer": "a",
+        "options": [
+        { "value": "a", "label": "A) A leaf" },
+        { "value": "b", "label": "B)  A walnut"},
+        { "value": "c", "label": "C)  A straw"},
+        { "value": "d", "label": "D) An egg"}
+        ],
+        "syncData": [
+        { "end": "0.40", "start": "0.05", "text": "7. What" },
+        { "end": "0.75", "start": "0.40", "text": " does" },
+        { "end": "1.05", "start": "0.75", "text": " the" },
+        { "end": "1.45", "start": "1.05", "text": " chick" },
+        { "end": "1.90", "start": "1.45", "text": " bring?" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section8.ogg",
+        "correctAudioSrc": "/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section8_answer1.ogg"
+        },
+        {
+        "questionText": "8. What is the bus doing?",
+        "correctAnswer": "b",
+        "options": [
+        { "value": "a", "label": "A)  A bucket" },
+        { "value": "b", "label": "B)  A walnut shell"},
+        { "value": "c", "label": "C)  An egg shell"},
+        { "value": "d", "label": "D) A sailing boat"}
+        ],
+        "syncData": [
+        { "end": "0.40", "start": "0.05", "text": "8. What" },
+        { "end": "0.75", "start": "0.40", "text": " does" },
+        { "end": "1.05", "start": "0.75", "text": " the" },
+        { "end": "1.45", "start": "1.05", "text": " mouse" },
+        { "end": "1.90", "start": "1.45", "text": " get?" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section9.ogg",
+        "correctAudioSrc": "/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section9_answer1.ogg"
+        },
+        {
+        "questionText": "9. What is the bus doing?",
+        "correctAnswer": "b",
+        "options": [
+        { "value": "a", "label": "A) A twig" },
+        { "value": "b", "label": "B) A straw"},
+        { "value": "c", "label": "C) A spoon"},
+        { "value": "d", "label": "D) A bat"}
+        ],
+        "syncData": [
+        { "end": "0.40", "start": "0.05", "text": "9. What" },
+        { "end": "0.75", "start": "0.40", "text": " does" },
+        { "end": "1.05", "start": "0.75", "text": " the" },
+        { "end": "1.45", "start": "1.05", "text": " ant" },
+        { "end": "1.90", "start": "1.45", "text": " get?" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section10.ogg",
+        "correctAudioSrc":"/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc": "/audio7/Activity 7/activity_section10_answer1.ogg"
+        },
+        {
+        "questionText": "10. What is the bus doing?",
+        "correctAnswer": "d",
+        "options": [
+        { "value": "a", "label": "A) A ship" },
+        { "value": "b", "label": "B) A yacht"},
+        { "value": "c", "label": "C) An  aeroplane"},
+        { "value": "d", "label": "D)  A sailing boat"}
+        ],
+        "syncData": [
+        { "end": "0.40", "start": "0.05", "text": "10. What" },
+        { "end": "0.70", "start": "0.40", "text": " did" },
+        { "end": "1.05", "start": "0.70", "text": " they" },
+        { "end": "1.40", "start": "1.05", "text": " make" },
+        { "end": "1.75", "start": "1.40", "text": " with" },
+        { "end": "2.00", "start": "1.75", "text": " the" },
+        { "end": "2.35", "start": "2.00", "text": " things" },
+        { "end": "2.70", "start": "2.35", "text": " they" },
+        { "end": "3.10", "start": "2.70", "text": " brought?" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section11.ogg",
+        "correctAudioSrc":"/audio7/Activity 7/youarecorrect.ogg",
+        "incorrectAudioSrc":"/audio7/Activity 7/activity_section11_answer1.ogg"
+        },
+        {
+        "questionText": "11. What is the bus doing?",
+        "correctAnswer": "b",
+        "options": [
+        { "value": "a", "label": "A) they returned home." },
+        { "value": "b", "label": "B)  they were too far."},
+        { "value": "c", "label": "C)  they were near the frog."},
+        { "value": "d", "label": "D)the frog was too surprised that he drowned."}
+        ],
+        "syncData": [
+        { "end": "0.35", "start": "0.05", "text": "11. The" },
+        { "end": "0.70", "start": "0.35", "text": " frog" },
+        { "end": "1.00", "start": "0.70", "text": " could" },
+        { "end": "1.40", "start": "1.05", "text": " not" },
+        { "end": "1.75", "start": "1.40", "text": " catch" },
+        { "end": "2.00", "start": "1.75", "text": " up" },
+        { "end": "2.35", "start": "2.00", "text": " with" },
+        { "end": "2.70", "start": "2.35", "text": " them, " },
+        { "end": "3.20", "start": "2.70", "text": " because" }
+        ],
+        "audioSrc": "/audio7/Activity 7/activity_section12.ogg",
+        "correctAudioSrc":"/audio7/Activity 7/good.ogg",
+        "incorrectAudioSrc":"/audio7/Activity 7/activity_section12_answer2.ogg"
+        }
+        ]
+        }
+

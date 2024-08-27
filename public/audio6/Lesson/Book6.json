@@ -1,5 +1,23 @@
         [
         {
+        "id": 1,
+        "image": "p1.png",
+        "content":"We are now going to read the Book, Tell Me...Now Sweet & Sour",
+        "timestamps": [
+        {"start": 0, "end": 0.5, "word": "We"},
+        {"start": 0.5, "end": 1.0, "word": "are"},
+        {"start": 1.0, "end": 1.5, "word": "now"},
+        {"start": 1.5, "end": 2.0, "word": "going"},
+        {"start": 2.0, "end": 2.5, "word": "to"},
+        {"start": 2.5, "end": 3.0, "word": "read"},
+        {"start": 3.0, "end": 3.5, "word": "the"},
+        {"start": 3.5, "end": 4.0, "word": "Book,"},
+        {"start": 4.0, "end": 4.5, "word": "Tell Me"},
+        {"start": 4.5, "end": 5.0, "word": "Now"}
+        ],
+        "audioSrc":"/audio6/Lesson/section1.ogg"
+        },
+        {
         "id": 2,
         "image": "p2.png",
         "content": "Why is sea water salty?",

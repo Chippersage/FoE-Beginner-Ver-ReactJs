@@ -1,0 +1,387 @@
+[
+
+{
+"id": 1,
+"image": "p1.jpg",
+"content":"We are now going to read the Book, The Boat",
+"timestamps": [
+{"start": 0, "end": 0.5, "word": "We"},
+{"start": 0.5, "end": 1.0, "word": "are"},
+{"start": 1.0, "end": 1.5, "word": "now"},
+{"start": 1.5, "end": 2.0, "word": "going"},
+{"start": 2.0, "end": 2.5, "word": "to"},
+{"start": 2.5, "end": 3.0, "word": "read"},
+{"start": 3.0, "end": 3.5, "word": "the"},
+{"start": 3.5, "end": 4.0, "word": "Book,"},
+{"start": 4.0, "end": 4.5, "word": "The"},
+{"start": 4.5, "end": 5.0, "word": "Boat"}
+],
+"audioSrc":"/audio7/Lesson7/section1.ogg"
+},
+{
+"id": 2,
+"image": "p2.jpg",
+"content": "A frog, a chick, a mouse, an ant, and a lady-bird, all went, out for a walk.Soon they came to the bank of a stream.",
+"timestamps": [
+{ "end": "0.30", "start": "0.05", "text": "A" },
+{ "end": "0.80", "start": "0.30", "text": "frog, " },
+{ "end": "0.95", "start": "0.80", "text": "a" },
+{ "end": "1.45", "start": "0.95", "text": "chick, " },
+{ "end": "1.70", "start": "1.45", "text": "a" },
+{ "end": "2.35", "start": "1.70", "text": "mouse, " },
+{ "end": "2.60", "start": "2.35", "text": "an" },
+{ "end": "3.20", "start": "2.60", "text": "ant," },
+{ "end": "3.75", "start": "3.20", "text": "and" },
+{ "end": "3.95", "start": "3.75", "text": "a" },
+{ "end": "4.95", "start": "3.95", "text": "lady-bird, " },
+{ "end": "5.35", "start": "4.95", "text": "all" },
+{ "end": "5.75", "start": "5.35", "text": "went, " },
+{ "end": "6.15", "start": "5.75", "text": "out" },
+{ "end": "6.55", "start": "6.15", "text": "for" },
+{ "end": "6.75", "start": "6.55", "text": "a" },
+{ "end": "7.30", "start": "6.75", "text": "walk." },
+{ "end": "8.15", "start": "7.30", "text": "Soon" },
+{ "end": "8.40", "start": "8.15", "text": "they" },
+{ "end": "9.00", "start": "8.40", "text": "came" },
+{ "end": "9.30", "start": "9.00", "text": "to" },
+{ "end": "9.50", "start": "9.30", "text": "the" },
+{ "end": "10.15", "start": "9.50", "text": "bank" },
+{ "end": "10.25", "start": "10.15", "text": "of" },
+{ "end": "10.55", "start": "10.25", "text": "a" },
+{ "end": "11.10", "start": "10.55", "text": "stream." }
+
+],
+"audioSrc": "/audio7/Lesson7/section2.ogg"
+},
+{
+"id": 3,
+"image": "p3.jpg",
+"content": "\"Let's have a swim\", said the frog, and jumped into the water.",
+"timestamps": [
+{ "end": "0.45", "start": "0.05", "text": "\"Let's" },
+{ "end": "0.75", "start": "0.45", "text": "have" },
+{ "end": "1.00", "start": "0.75", "text": "a" },
+{ "end": "1.60", "start": "1.00", "text": "swim\", " },
+{ "end": "2.15", "start": "1.60", "text": "said" },
+{ "end": "2.35", "start": "2.15", "text": "the" },
+{ "end": "2.95", "start": "2.35", "text": "frog, " },
+{ "end": "3.30", "start": "2.95", "text": "and" },
+{ "end": "3.80", "start": "3.30", "text": "jumped" },
+{ "end": "4.15", "start": "3.80", "text": "into" },
+{ "end": "4.40", "start": "4.15", "text": "the" },
+{ "end": "4.90", "start": "4.40", "text": "water." }
+],
+"audioSrc": "/audio7/Lesson7/section3.ogg"
+},
+{
+"id": 4,
+"image": "p4.jpg",
+"content": "\"But we can't swim!\" called out the chick the mouse, the ant and the lady-bird.",
+"timestamps": [
+{ "end": "0.40", "start": "0.05", "text": "\"But" },
+{ "end": "0.70", "start": "0.40", "text": "we" },
+{ "end": "1.10", "start": "0.70", "text": "can't" },
+{ "end": "1.60", "start": "1.10", "text": "swim!\"" },
+{ "end": "2.05", "start": "1.60", "text": "called" },
+{ "end": "2.40", "start": "2.05", "text": "out" },
+{ "end": "2.70", "start": "2.40", "text": "the " },
+{ "end": "3.20", "start": "2.70", "text": "chick, " },
+{ "end": "3.45", "start": "3.20", "text": "the" },
+{ "end": "4.10", "start": "3.45", "text": "mouse, " },
+{ "end": "4.35", "start": "4.10", "text": "the" },
+{ "end": "4.80", "start": "4.35", "text": "ant" },
+{ "end": "5.15", "start": "4.80", "text": "and" },
+{ "end": "5.40", "start": "5.15", "text": "the" },
+{ "end": "6.06", "start": "5.45", "text": "lady-bird." }
+],
+"audioSrc": "/audio7/Lesson7/section4.ogg"
+},
+{
+"id": 5,
+"image": "p5.jpg",
+"content": "\"Croak-Croak-Croak!\" laughed the frog.",
+"timestamps": [
+{ "end": "1.95", "start": "0.05", "text": "\"Croak-Croak-Croak!\"" },
+{ "end": "2.25", "start": "1.95", "text": "laughed" },
+{ "end": "2.50", "start": "2.25", "text": "the" },
+{ "end": "3.00", "start": "2.50", "text": "frog." }
+],
+"audioSrc": "/audio7/Lesson7/section5.ogg"
+},
+{
+"id": 6,
+"image": "p6.jpg",
+"content": "\"What good are you all?\" And he laughed till he nearly choked.",
+"timestamps": [
+{ "end": "0.40", "start": "0.05", "text": "\"What" },
+{ "end": "0.85", "start": "0.40", "text": "good" },
+{ "end": "1.10", "start": "0.85", "text": "are" },
+{ "end": "1.40", "start": "1.10", "text": "you" },
+{ "end": "2.00", "start": "1.40", "text": "all?\"" },
+{ "end": "2.50", "start": "2.00", "text": "And" },
+{ "end": "2.80", "start": "2.50", "text": "he" },
+{ "end": "3.35", "start": "2.80", "text": "laughed"},
+{ "end": "3.70", "start": "3.35", "text": "till" },
+{ "end": "4.05", "start": "3.70", "text": "he" },
+{ "end": "4.55", "start": "4.05", "text": "nearly" },
+{ "end": "5.05", "start": "4.55", "text": "choked." }
+],
+"audioSrc": "/audio7/Lesson7/section6.ogg"
+},
+{
+"id": 7,
+"image": "p7.jpg",
+"content": "The chick, the mouse, the ant, and the lady-bird, felt bad.",
+"timestamps": [
+{ "end": "0.35", "start": "0.05", "text": "The" },
+{ "end": "0.80", "start": "0.35", "text": "chick, " },
+{ "end": "1.05", "start": "0.80", "text": "the" },
+{ "end": "1.55", "start": "1.05", "text": "mouse, " },
+{ "end": "1.75", "start": "1.55", "text": "the" },
+{ "end": "2.25", "start": "1.72", "text": "ant, " },
+{ "end": "2.65", "start": "2.25", "text": "and " },
+{ "end": "2.95", "start": "2.65", "text": "the" },
+{ "end": "3.75", "start": "2.95", "text": "lady-bird, " },
+{ "end": "4.25", "start": "3.75", "text": "felt" },
+{ "end": "4.95", "start": "4.25", "text": "bad." }
+],
+"audioSrc": "/audio7/Lesson7/section7.ogg"
+},
+{
+"id": 8,
+"image": "p8.jpg",
+"content": "They thought \"What can be done about it?\"",
+"timestamps": [
+{ "end": "0.40", "start": "0.05", "text": "They" },
+{ "end": "1.10", "start": "0.40", "text": "thought, " },
+{ "end": "1.50", "start": "1.10", "text": "\"What" },
+{ "end": "1.90", "start": "1.50", "text": "can" },
+{ "end": "2.15", "start": "1.90", "text": "be" },
+{ "end": "2.40", "start": "2.15", "text": "done" },
+{ "end": "2.70", "start": "2.40", "text": "about " },
+{ "end": "3.05", "start": "2.70", "text": "it?\"" }   
+],
+"audioSrc": "/audio7/Lesson7/section8.ogg"
+},
+{
+"id": 9,
+"image": "p9.jpg",
+"content": "They thought, and they thought, and they thought. And this is what they did.",
+"timestamps": [
+{ "end": "0.35", "start": "0.05", "text": "They" },
+{ "end": "1.00", "start": "0.35", "text": "thought, " },
+{ "end": "1.50", "start": "1.00", "text": "and" },
+{ "end": "1.85", "start": "1.50", "text": "they" },
+{ "end": "2.35", "start": "1.85", "text": "thought, " },
+{ "end": "2.90", "start": "2.35", "text": "and" },
+{ "end": "3.35", "start": "2.90", "text": "they" },
+{ "end": "4.30", "start": "3.35", "text": "thought. " },
+{ "end": "4.95", "start": "4.30", "text": "And" },
+{ "end": "5.35", "start": "4.95", "text": "this" },
+{ "end": "5.60", "start": "5.35", "text": "is" },
+{ "end": "6.05", "start": "5.60", "text": "what" },
+{ "end": "6.65", "start": "6.05", "text": "they" },
+{ "end": "7.30", "start": "6.65", "text": "did." }
+],
+"audioSrc": "/audio7/Lesson7/section9.ogg"
+},
+{
+"id": 10,
+"image": "p10.jpg",
+"content": "The chick went away and soon came back with a leaf.",
+"timestamps": [
+{ "end": "0.25", "start": "0.00", "text": "The" },
+{ "end": "0.65", "start": "0.25", "text": "chick" },
+{ "end": "1.00", "start": "0.65", "text": "went" },
+{ "end": "1.35", "start": "1.00", "text": "away" },
+{ "end": "1.70", "start": "1.35", "text": "and" },
+{ "end": "2.05", "start": "1.70", "text": "soon" },
+{ "end": "2.40", "start": "2.05", "text": "came" },
+{ "end": "2.75", "start": "2.40", "text": "back" },
+{ "end": "3.05", "start": "2.75", "text": "with" },
+{ "end": "3.30", "start": "3.05", "text": "a" },
+{ "end": "3.65", "start": "3.30", "text": "leaf." }
+],
+"audioSrc": "/audio7/Lesson7/section10.ogg"
+},
+{
+"id": 11,
+"image": "p11.jpg",
+"content": "The mouse fetched half a wallnut shell.",
+"timestamps": [
+{ "end": "0.35", "start": "0.05", "text": "The" },
+{ "end": "0.70", "start": "0.35", "text": "mouse" },
+{ "end": "0.95", "start": "0.70", "text": "fetched" },
+{ "end": "1.30", "start": "0.95", "text": "half" },
+{ "end": "1.65", "start": "1.30", "text": "a" },
+{ "end": "1.85", "start": "1.65", "text": "wallnut" },
+{ "end": "2.30", "start": "1.85", "text": "shell." }
+],
+"audioSrc": "/audio7/Lesson7/section11.ogg"
+},
+{
+"id": 12,
+"image": "p12.jpg",
+"content": "The ant brought a straw and the lady-bird a long piece of black thread.",
+"timestamps": [
+{ "end": "0.30", "start": "0.00", "text": "The" },
+{ "end": "0.70", "start": "0.30", "text": "ant" },
+{ "end": "1.10", "start": "0.70", "text": "brought" },
+{ "end": "1.35", "start": "1.10", "text": "a" },
+{ "end": "1.85", "start": "1.35", "text": "straw" },
+{ "end": "2.35", "start": "1.85", "text": "and" },
+{ "end": "2.60", "start": "2.35", "text": "the" },
+{ "end": "3.15", "start": "2.60", "text": "lady-bird" },
+{ "end": "3.40", "start": "3.15", "text": "a" },
+{ "end": "3.85", "start": "3.40", "text": "long" },
+{ "end": "4.30", "start": "3.85", "text": "piece" },
+{ "end": "4.55", "start": "4.30", "text": "of" },
+{ "end": "5.00", "start": "4.55", "text": "black" },
+{ "end": "5.45", "start": "5.00", "text": "thread." }
+],
+"audioSrc": "/audio7/Lesson7/section12.ogg"
+},
+{
+"id": 13,
+"image": "p13.jpg",
+"content": "Then they all set to work. ",
+"timestamps": [
+{ "end": "0.30", "start": "0.00", "text": "Then" },
+{ "end": "0.70", "start": "0.30", "text": "they" },
+{ "end": "1.05", "start": "0.70", "text": "all" },
+{ "end": "1.35", "start": "1.05", "text": "set" },
+{ "end": "1.65", "start": "1.35", "text": "to" },
+{ "end": "2.25", "start": "1.65", "text": "work. " }
+
+],
+"audioSrc": "/audio7/Lesson7/section13.ogg"
+},
+{
+"id": 14,
+"image": "p14.jpg",
+"content": "They stuck the straw into the bottom of the shell, and tied the leaf to it with the thread.",
+"timestamps": [
+{ "end": "0.30", "start": "0.00", "text": "They" },
+{ "end": "0.50", "start": "0.30", "text": "stuck" },
+{ "end": "1.15", "start": "0.50", "text": "the" },
+{ "end": "1.35", "start": "1.15", "text": "straw" },
+{ "end": "1.55", "start": "1.35", "text": "into" },
+{ "end": "2.15", "start": "1.55", "text": "the" },
+{ "end": "2.35", "start": "2.15", "text": "bottom" },
+{ "end": "2.55", "start": "2.35", "text": "of" },
+{ "end": "3.15", "start": "2.55", "text": "the" },
+{ "end": "3.30", "start": "3.15", "text": "shell," },
+{ "end": "3.50", "start": "3.30", "text": "and" },
+{ "end": "4.10", "start": "3.50", "text": "tied" },
+{ "end": "4.30", "start": "4.10", "text": "the" },
+{ "end": "4.50", "start": "4.30", "text": "leaf" },
+{ "end": "5.10", "start": "4.50", "text": "to" },
+{ "end": "5.30", "start": "5.10", "text": "it" },
+{ "end": "5.50", "start": "5.30", "text": "with" },
+{ "end": "6.10", "start": "5.50", "text": "the" },
+{ "end": "6.35", "start": "6.10", "text": "thread." }
+],
+"audioSrc": "/audio7/Lesson7/section14.ogg"
+},
+{
+"id": 15,
+"image": "p15.jpg",
+"content": "In a minute they had the prettiest little sailing boat you ever saw.",
+"timestamps": [
+{ "end": "0.25", "start": "0.00", "text": "In" },
+{ "end": "0.75", "start": "0.25", "text": "a" },
+{ "end": "1.25", "start": "0.75", "text": "minute" },
+{ "end": "1.55", "start": "1.25", "text": "they" },
+{ "end": "1.80", "start": "1.55", "text": "had" },
+{ "end": "2.05", "start": "1.80", "text": "the" },
+{ "end": "2.65", "start": "2.05", "text": "prettiest" },
+{ "end": "3.10", "start": "2.65", "text": "little" },
+{ "end": "3.65", "start": "3.10", "text": "sailing" },
+{ "end": "4.05", "start": "3.65", "text": "boat" },
+{ "end": "4.30", "start": "4.05", "text": "you" },
+{ "end": "4.75", "start": "4.30", "text": "ever" },
+{ "end": "5.30", "start": "4.75", "text": "saw." }
+],
+"audioSrc": "/audio7/Lesson7/section15.ogg"
+},
+{
+"id": 16,
+"image": "p16.jpg",
+"content": "They pushed it into the water, jumped on it, and off they sailed!",
+"timestamps": [
+{ "end": "0.30", "start": "0.00", "text": "They" },
+{ "end": "0.70", "start": "0.30", "text": "pushed" },
+{ "end": "0.95", "start": "0.70", "text": "it" },
+{ "end": "1.30", "start": "0.95", "text": "into" },
+{ "end": "1.55", "start": "1.30", "text": "the" },
+{ "end": "2.15", "start": "1.55", "text": "water, " },
+{ "end": "2.60", "start": "2.15", "text": "jumped" },
+{ "end": "2.85", "start": "2.60", "text": "on" },
+{ "end": "3.30", "start": "2.85", "text": "it, " },
+{ "end": "3.65", "start": "3.30", "text": "and" },
+{ "end": "4.05", "start": "3.65", "text": "off" },
+{ "end": "4.40", "start": "4.05", "text": "they" },
+{ "end": "5.05", "start": "4.40", "text": "sailed!" }
+],
+"audioSrc": "/audio7/Lesson7/section16.ogg"
+},
+{
+"id": 17,
+"image": "p17.jpg",
+"content": "The frog stuck his head out of the water. ",
+"timestamps": [
+{ "end": "0.30", "start": "0.00", "text": "The" },
+{ "end": "0.65", "start": "0.30", "text": "frog" },
+{ "end": "1.00", "start": "0.65", "text": "stuck" },
+{ "end": "1.30", "start": "1.00", "text": "his" },
+{ "end": "1.65", "start": "1.30", "text": "head" },
+{ "end": "1.90", "start": "1.65", "text": "out" },
+{ "end": "2.10", "start": "1.90", "text": "of" },
+{ "end": "2.30", "start": "2.10", "text": "the" },
+{ "end": "2.75", "start": "2.30", "text": "water. " }
+
+],
+"audioSrc": "/audio7/Lesson7/section17.ogg"
+},
+{
+"id": 18,
+"image": "p18.jpg",
+"content": "The frog was going to laugh again, but the boat was far, far away.",
+"timestamps": [
+{ "end": "0.30", "start": "0.00", "text": "The" },
+{ "end": "0.75", "start": "0.30", "text": "frog" },
+{ "end": "1.00", "start": "0.75", "text": "was" },
+{ "end": "1.30", "start": "1.00", "text": "going" },
+{ "end": "1.65", "start": "1.30", "text": "to" },
+{ "end": "1.90", "start": "1.65", "text": "laugh" },
+{ "end": "2.20", "start": "1.90", "text": "again," },
+{ "end": "2.50", "start": "2.20", "text": "but" },
+{ "end": "2.80", "start": "2.50", "text": "the" },
+{ "end": "3.10", "start": "2.80", "text": "boat" },
+{ "end": "3.40", "start": "3.10", "text": "was" },
+{ "end": "3.70", "start": "3.40", "text": "far, " },
+{ "end": "4.00", "start": "3.70", "text": "far" },
+{ "end": "4.30", "start": "4.00", "text": "away." }
+],
+"audioSrc": "/audio7/Lesson7/section18.ogg"
+},
+{
+"id": 19,
+"image": "p19.jpg",
+"content": "Much too far for the frog to catch up with it.",
+"timestamps": [
+{ "end": "0.30", "start": "0.00", "text": "Much" },
+{ "end": "0.65", "start": "0.30", "text": "too" },
+{ "end": "1.10", "start": "0.65", "text": "far" },
+{ "end": "1.40", "start": "1.10", "text": "for" },
+{ "end": "1.65", "start": "1.40", "text": "the" },
+{ "end": "2.00", "start": "1.65", "text": "frog" },
+{ "end": "2.20", "start": "2.00", "text": "to" },
+{ "end": "2.60", "start": "2.20", "text": "catch" },
+{ "end": "2.80", "start": "2.60", "text": "up" },
+{ "end": "3.25", "start": "2.80", "text": "with" },
+{ "end": "3.85", "start": "3.25", "text": "it." }
+],
+"audioSrc": "/audio7/Lesson7/section19.ogg"
+}
+]

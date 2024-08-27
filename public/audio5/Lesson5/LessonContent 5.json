@@ -1,0 +1,183 @@
+        [
+        {
+        "id": 1,
+        "image": "p1.png",
+        "content":"We are now going to read the Book, Tell Me...Now Round & Round",
+        "timestamps": [
+        {"start": 0, "end": 0.5, "word": "We"},
+        {"start": 0.5, "end": 1.0, "word": "are"},
+        {"start": 1.0, "end": 1.5, "word": "now"},
+        {"start": 1.5, "end": 2.0, "word": "going"},
+        {"start": 2.0, "end": 2.5, "word": "to"},
+        {"start": 2.5, "end": 3.0, "word": "read"},
+        {"start": 3.0, "end": 3.5, "word": "the"},
+        {"start": 3.5, "end": 4.0, "word": "Book,"},
+        {"start": 4.0, "end": 4.5, "word": "Tell Me"},
+        {"start": 4.5, "end": 5.0, "word": "Now"}
+        ],
+        "audioSrc":"/audio5/Lesson5/section1.ogg"
+        },
+        {
+        "id": 2,
+        "image": "p2.png",
+        "content": "Why are wheels round?",
+        "timestamps": [
+        { "end": "0.35", "start": "0.00", "text": "Why " },
+        { "end": "0.60", "start": "0.35", "text": "are" },
+        { "end": "1.15", "start": "0.60", "text": "wheels" },
+        { "end": "1.85", "start": "1.15", "text": "round?" }
+        ],
+        "audioSrc": "/audio5/Lesson5/section2.ogg"
+        },
+        {
+        "id": 3,
+        "image": "p3.png",
+        "content": "This bus does not move.",
+        "timestamps": [
+        { "end": "0.45", "start": "0.10", "text": "This" },
+        { "end": "0.95", "start": "0.45", "text": "bus" },
+        { "end": "1.40", "start": "0.95", "text": "does" },
+        { "end": "1.70", "start": "1.40", "text": "not" },
+        { "end": "2.30", "start": "1.70", "text": "move." }
+        ],
+        "audioSrc": "/audio5/Lesson5/section3.ogg"
+        },
+        {
+        "id": 4,
+        "image": "p4.png",
+        "content": "Why are bangles round?",
+        "timestamps": [
+        { "end": "0.35", "start": "0.00", "text": "Why " },
+        { "end": "0.60", "start": "0.35", "text": "are" },
+        { "end": "1.15", "start": "0.60", "text": "bangles" },
+        { "end": "1.85", "start": "1.15", "text": "round?" }
+        ],
+        "audioSrc": "/audio5/Lesson5/section4.ogg"
+        },
+        {
+        "id": 5,
+        "image": "p5.png",
+        "content": "I will not buy square bangles.",
+        "timestamps": [
+        {"end": "0.35", "start": "0.05", "text": "I" },
+        { "end": "0.65", "start": "0.35", "text": "will" },
+        { "end": "0.90", "start": "0.65", "text": "not" },
+        { "end": "1.20", "start": "0.90", "text": "buy" },
+        { "end": "1.60", "start": "1.20", "text": "square" },
+        { "end": "2.25", "start": "1.60", "text": "bangles." }
+        ],
+        "audioSrc": "/audio5/Lesson5/section5.ogg"
+        },
+        {
+        "id": 6,
+        "image": "p6.png",
+        "content": "Why is a chapatti round?",
+        "timestamps": [
+        { "end": "0.35", "start": "0.00", "text": "Why " },
+        { "end": "0.65", "start": "0.35", "text": "is" },
+        { "end": "0.95", "start": "0.65", "text": "a" },
+        { "end": "1.55", "start": "0.95", "text": "chapatti" },
+        { "end": "2.20", "start": "1.55", "text": "round?" }
+        ],
+        "audioSrc": "/audio5/Lesson5/section6.ogg"
+        },
+        {
+        "id": 7,
+        "image": "p7.png",
+        "content": "It is not round when I try to roll it.",
+        "timestamps": [
+        { "end": "0.25", "start": "0.00", "text": "It" },
+        { "end": "0.45", "start": "0.25", "text": "is" },
+        { "end": "0.70", "start": "0.45", "text": "not" },
+        { "end": "1.20", "start": "0.70", "text": "round" },
+        { "end": "1.55", "start": "1.20", "text": "when" },
+        { "end": "1.75", "start": "1.55", "text": "I" },
+        { "end": "2.00", "start": "1.75", "text": "try" },
+        { "end": "2.20", "start": "2.00", "text": "to" },
+        { "end": "2.55", "start": "2.20", "text": "roll" },
+        { "end": "2.95", "start": "2.55", "text": "it." }
+        ],
+        "audioSrc": "/audio5/Lesson5/section7.ogg"
+        },
+        {
+        "id": 8,
+        "image": "p8.png",
+        "content": "Why is your bindi round?",
+        "timestamps": [
+        { "end": "0.35", "start": "0.00", "text": "Why" },
+        { "end": "0.50", "start": "0.35", "text": "is" },
+        { "end": "0.85", "start": "0.50", "text": "your" },
+        { "end": "1.35", "start": "0.85", "text": "bindi" },
+        { "end": "1.90", "start": "1.35", "text": "round?" }
+        ],
+        "audioSrc": "/audio5/Lesson5/section8.ogg"
+        },
+        {
+        "id": 9,
+        "image": "p9.png",
+        "content": "Do you think this bindi looks nice?",
+        "timestamps": [
+        { "end": "0.30", "start": "0.00", "text": "Do " },
+        { "end": "0.60", "start": "0.30", "text": "you" },
+        { "end": "0.95", "start": "0.60", "text": "think" },
+        { "end": "1.25", "start": "0.95", "text": "this" },
+        { "end": "1.70", "start": "1.25", "text": "bindi" },
+        { "end": "2.10", "start": "1.70", "text": "looks" },
+        { "end": "2.65", "start": "2.10", "text": "nice?" }
+        ],
+        "audioSrc": "/audio5/Lesson5/section9.ogg"
+        },
+        {
+        "id": 10,
+        "image": "p10.png",
+        "content": "Why are eyes round?",
+        "timestamps": [
+        { "end": "0.35", "start": "0.00", "text": "Why" },
+        { "end": "0.65", "start": "0.35", "text": "are" },
+        { "end": "1.00", "start": "0.65", "text": "eyes" },
+        { "end": "1.65", "start": "1.00", "text": "round?" }
+        ],
+        "audioSrc": "/audio5/Lesson5/section10.ogg"
+        },
+        {
+        "id": 11,
+        "image": "p11.png",
+        "content": "They are round and they are BIG!",
+        "timestamps": [
+        { "end": "0.45", "start": "0.05", "text": "They" },
+        { "end": "0.70", "start": "0.45", "text": "are" },
+        { "end": "1.25", "start": "0.70", "text": "round" },
+        { "end": "1.95", "start": "1.25", "text": "and" },
+        { "end": "2.40", "start": "1.95", "text": "they" },
+        { "end": "2.95", "start": "2.40", "text": "are" },
+        { "end": "3.85", "start": "2.95", "text": "BIG!" }
+        ],
+        "audioSrc": "/audio5/Lesson5/section11.ogg"
+        },
+        {
+        "id": 12,
+        "image": "p12.png",
+        "content": "Why is zero round?",
+        "timestamps": [
+        { "end": "0.40", "start": "0.05", "text": "Why" },
+        { "end": "0.70", "start": "0.40", "text": "is" },
+        { "end": "1.35", "start": "0.70", "text": "zero" },
+        { "end": "2.05", "start": "1.35", "text": "round?" }
+        ],
+        "audioSrc": "/audio5/Lesson5/section12.ogg"
+        },
+        {
+        "id": 13,
+        "image": "p13.png",
+        "content": "I don't know.",
+        "timestamps": [
+        { "end": "0.35", "start": "0.05", "text": "I " },
+        { "end": "0.90", "start": "0.35", "text": "don't" },
+        { "end": "1.30", "start": "0.90", "text": "know." }
+        ],
+        "audioSrc": "/audio5/Lesson5/section13.ogg"
+        }
+        ]
+
+
+
